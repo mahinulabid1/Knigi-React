@@ -1,9 +1,29 @@
-const ShopNavigation = () => {
+import { useState , useEffect } from "react";
+
+
+const ShopNavigation = ( { shopClick } ) => {
+
+    const [ displayShop, setDisplayShop ] = useState ("d-none");
+    const [ animation, setAnimation ] = useState ('slideUp');  
+    
+    // auto close prevent on hover
+    const [ time, setTime ] = useState (0);
+
+
+    useEffect( () => {
+        if ( shopClick === 1 ) {
+            setAnimation( "slideDown" );
+            setDisplayShop( "" );
+            setTime(Date.now());
+        }
+    }, [ shopClick ]);
+
     return (
         <>
             {/* <!-- SHOP NAVIGATION MENU --> */}
             {/* <!-- START --> */}
-            <div className = "book-shop-separate d-none slideUp">
+            <div className = { displayShop + " book-shop-separate " + animation } >
+
                 <div className = "bs-container flex flex-wrap flex-s-a">
                     <a href="./productDescription.php" className = "b-s-item">
                         <div className = "b-s-image-container">
@@ -54,7 +74,27 @@ const ShopNavigation = () => {
 
 
 
-                <div className = "empty-space-close">
+                <div 
+                    className = "empty-space-close" 
+                    onMouseOver = {
+                            ( ) => { 
+                                //preventing auto close
+                                let Now = Date.now();
+                                let diff = Now - time;
+
+                                if( diff > 1000 ) { //if hovering is not more than one second than do not close 
+                                    setTimeout( ( ) => {
+                                        setDisplayShop ( "d-none" ); 
+                                    }, 370 );
+                                    
+                                    setAnimation("slideUp"); 
+                                }
+
+                                
+                            }
+                        } 
+                >
+                
 
                 </div>
             </div>
