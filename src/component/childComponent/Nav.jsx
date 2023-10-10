@@ -1,6 +1,6 @@
 import HamNavigation from "./HamNavigation";
-import ShopNavigation from "./ShopNavigation"
-import SearchBox from "./Searchbox"
+import ShopNavigation from "./shopNavigation"
+import SearchBox from "./searchbox"
 import Cart from "./Cart"
 
 const Navigation = () => {

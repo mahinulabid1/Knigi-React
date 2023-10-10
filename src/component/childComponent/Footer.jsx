@@ -7,7 +7,7 @@ const Footer = () => {
                 <div><a href="">Stay In Touch!</a> </div>
                 <div><a href="./FAQ.php">FAQ</a> </div>
                 <div><a href="./termsandCondition.php">Terms & Conditions</a> </div>
-                <div class="copyright-text">© WOVEN 2021</div>
+                <div className="copyright-text">© WOVEN 2021</div>
             </footer>
         </>
     )

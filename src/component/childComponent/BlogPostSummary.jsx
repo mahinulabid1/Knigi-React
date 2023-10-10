@@ -1,11 +1,11 @@
 const BlogPostSummary = () => {
     return (
         <>
-            <section class="blog-posts">
+            <section className="blog-posts">
                 <h3>FEATURED BLOG POSTS</h3>
-                <div class="flex flex-wrap flex-cen">
-                    <div class="blog-posts-item">
-                        <div><img src="./app/img/stories/stories4.jpg" alt=""/></div>
+                <div className="flex flex-wrap flex-cen">
+                    <div className="blog-posts-item">
+                        <div><img src="images/stories/stories4.jpg" alt=""/></div>
 
                         <div>
                             <h4>Making Art in the Middle of Nowhere</h4>
@@ -15,8 +15,8 @@ const BlogPostSummary = () => {
                         </div>
                     </div>
 
-                    <div class="blog-posts-item">
-                        <div><img src="./app/img/stories/stories2.jpg" alt=""/></div>
+                    <div className="blog-posts-item">
+                        <div><img src="images/stories/stories2.jpg" alt=""/></div>
                         <div>
                             <h4>Making Art in the Middle of Nowhere</h4>
                             <p>Exploring a West Texas must-see, firmly
@@ -25,8 +25,8 @@ const BlogPostSummary = () => {
                         </div>
                     </div>
 
-                    <div class="blog-posts-item">
-                        <div><img src="./app/img/stories/stories6.jpg" alt=""/></div>
+                    <div className="blog-posts-item">
+                        <div><img src="images/stories/stories6.jpg" alt=""/></div>
                         <div>
                             <h4>Making Art in the Middle of Nowhere</h4>
                             <p>Exploring a West Texas must-see, firmly
@@ -35,8 +35,8 @@ const BlogPostSummary = () => {
                         </div>
                     </div>
 
-                    <div class="blog-posts-item">
-                        <div><img src="./app/img/stories/stories5.jpg" alt=""/></div>
+                    <div className="blog-posts-item">
+                        <div><img src="images/stories/stories5.jpg" alt=""/></div>
                         <div>
                             <h4>Making Art in the Middle of Nowhere</h4>
                             <p>Exploring a West Texas must-see, firmly
@@ -46,8 +46,11 @@ const BlogPostSummary = () => {
                     </div>
 
                 </div>
-                <div class="visit-blog-btn"><a href="./allBlogs.php">Visit blog</a></div>
+                <div className="visit-blog-btn"><a href="./allBlogs.php">Visit blog</a></div>
             </section>
         </>
     )
 }
+
+
+export default BlogPostSummary;
