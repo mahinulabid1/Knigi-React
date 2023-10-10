@@ -1,19 +1,44 @@
+import {useState} from "react"
+
 import HamNavigation from "./HamNavigation";
 import ShopNavigation from "./shopNavigation"
 import SearchBox from "./searchbox"
 import Cart from "./Cart"
 
+
+
 const Navigation = () => {
+    const [ hamSwitch, setHamSwitch ] = useState ( 0 ); //0 = close navigation , 1 = open ham navigation
+
+    const clickHandler = () => {
+        /*
+            Description:
+            =============
+            This click handler sends a small response to another component 
+            named: "HamNavigation" in another file: "HamNavigation.jsx"
+
+            It simply says button clicked and then reset its value so that
+            it can send the same signal again.
+        */
+        if ( hamSwitch === 0 ) {
+            setHamSwitch( 1 );
+
+            setTimeout ( () => {
+                setHamSwitch ( 0 );
+            } , 100 )
+        }
+    }
+
     return (
         <>
             <nav>
-                <div className="flex flex-align-center">
-                    <div className="dekstop-ham-container">
-                        <div className="dekstop-ham-relative">
+                <div className ="flex flex-align-center">
+                    <div className ="dekstop-ham-container">
+                        <button onClick ={clickHandler} className="dekstop-ham-relative" style={{background:"none", border:"none", cursor:"pointer"}}>
                             <div></div>
                             <div></div>
                             <div></div>
-                        </div>
+                        </button>
 
                     </div>
                     <div className="shop-btn flex flex-align-center">SHOP <img src="images/icons/arrowdown.png" alt="" height="20" width="20"/></div>
@@ -32,8 +57,8 @@ const Navigation = () => {
             </nav>
 
 
-            <HamNavigation/>
-            <ShopNavigation/>
+            <HamNavigation hamClick={hamSwitch}/>
+            <ShopNavigation />
             <SearchBox />
             <Cart />
 
