@@ -5,7 +5,6 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Homepage from "./component/index"
-import "../public/scss/dist/component/navigation.css";
 
 
 
