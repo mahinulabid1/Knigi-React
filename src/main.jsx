@@ -4,7 +4,9 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+
 import Homepage from "./component/index"
+import StoriesPage from "./component/storiesPage"
 
 
 
@@ -12,6 +14,11 @@ const router = createBrowserRouter ( [
   {
     path: "/",
     element: <Homepage/>,
+  },
+  
+  {
+    path: "/allStories",
+    element : <StoriesPage />
   }
 
 ] );
