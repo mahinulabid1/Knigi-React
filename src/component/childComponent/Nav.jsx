@@ -15,6 +15,7 @@ const Navigation = () => {
     const [ searchSwitch, setSearchSwitch ] = useState( 0 );
 
     const clickHandler = ( target , setResponse) => {
+        // alert("handler working")
         /*
             Description:
             =============
@@ -29,7 +30,7 @@ const Navigation = () => {
 
             setTimeout ( () => {
                 setResponse ( 0 );
-            } , 100 )
+            } , 300 )
             
         }
     }
@@ -62,18 +63,20 @@ const Navigation = () => {
                 {/* ./app/img/icons/search.png */}
                 <div className = "flex flex-s-b flex-align-center" >
                     {/* <!-- search icon className --> */}
-                    <div className = "search-icon"><img src = "/images/icons/search.png" alt = "search anything" height = "20" width = "20"/></div>
-                    <div className = "cart-btn cart-text-responsive" id ="cart-open">CART</div>
+                    <div className = "search-icon">
+                        <img src = "/images/icons/search.png" onClick = { () => { clickHandler ( searchSwitch , setSearchSwitch ) }} alt = "search anything" height = "20" width = "20"/>
+                    </div>
+
+                    <div className = "cart-btn cart-text-responsive" id ="cart-open" onClick = { () => { clickHandler ( cartSwitch , setCartSwitch ) }}>CART</div>
                     <div className = "cart-btn cart-icon" id = "cart-open"><img src = "/images/icons/cart.png" alt ="Shopping Cart" height ="20" width ="20"/></div>
                 </div>
-
             </nav>
 
 
             <HamNavigation hamClick = { hamSwitch } />
             <ShopNavigation shopClick = { shopSwitch } />
-            <SearchBox />
-            <Cart />
+            <SearchBox searchClick = {searchSwitch}/>
+            <Cart cartClick = { cartSwitch } />
 
         </>
     )
