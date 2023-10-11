@@ -10,6 +10,14 @@ const ShopNavigation = ({ shopClick }) => {
     // auto close prevent on hover
     const [time, setTime] = useState(0);
 
+    useEffect(() => {
+        if (shopClick === 1) {
+            setAnimation("slideDown");
+            setDisplayShop("");
+            setTime(Date.now());
+        }
+    }, [shopClick]);
+
 
     const shopData = [
         {   
@@ -51,20 +59,12 @@ const ShopNavigation = ({ shopClick }) => {
 
 
 
-    useEffect(() => {
-        if (shopClick === 1) {
-            setAnimation("slideDown");
-            setDisplayShop("");
-            setTime(Date.now());
-        }
-    }, [shopClick]);
 
 
 
     return (
         <>
             {/* <!-- SHOP NAVIGATION MENU --> */}
-            {/* <!-- START --> */}
             <div className={displayShop + " book-shop-separate " + animation} >
 
                 <div className="bs-container flex flex-wrap flex-s-a">
@@ -80,9 +80,9 @@ const ShopNavigation = ({ shopClick }) => {
                                         <div>
                                             <p>{cur.title}</p>
                                             <p>
-                                                <span className="discounted-regular-price">{cur.discountedRegularPrice}</span>
-                                                <span className="discounted-price"> {cur.discountedPrice}</span> 
-                                                <span className="regular-price"> {cur.regularPrice}</span>
+                                                <span className = "discounted-regular-price" > { cur.discountedRegularPrice } </span>
+                                                <span className = "discounted-price" > { cur.discountedPrice } </span> 
+                                                <span className = "regular-price" > { cur.regularPrice } </span>
                                             </p>
                                         </div>
 
@@ -117,7 +117,7 @@ const ShopNavigation = ({ shopClick }) => {
                         }
                     }
                 ></div>
-                
+
             </div>
 
         </>
