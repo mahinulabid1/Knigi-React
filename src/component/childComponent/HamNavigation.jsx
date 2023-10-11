@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { shopData, NavLinksInfo, closeFunc } from  "./dataAndFunctions";
 
 
 const HamNavigation = ( { hamClick } ) => {
@@ -12,15 +13,6 @@ const HamNavigation = ( { hamClick } ) => {
         }
     }, [ hamClick ]);
 
-
-
-    const NavLinksInfo = [
-        {link : "/allStories" , text : "STORIES"} ,
-        {link : "/films" , text : "FILMS"} ,
-        {link : "/shop" , text : "SHOP"} ,
-        {link : "/blog" , text : "BLOG"} ,
-        {link : "/about" , text : "ABOUT"} 
-    ]
 
     return (
         <>
@@ -40,19 +32,7 @@ const HamNavigation = ( { hamClick } ) => {
                         REQUEST INTERVIEW
                     </a>
                     
-                    <div onClick={
-
-                        () => { 
-                            setAnimation ( "slideUp" ); 
-
-                            setTimeout ( () => {
-                                setDisplay ( "d-none" );
-                            }, 370 )
-
-                            }
-                        }      
-                    className = "ham-close-btn" id = "close-nav-in-ham">
-
+                    <div onClick={ () => { closeFunc ( setDisplay, setAnimation ); } } className = "ham-close-btn" id = "close-nav-in-ham">
                         
                         <img src = "images/icons/close.png" alt = "" height = "20" width = "20" />
 
