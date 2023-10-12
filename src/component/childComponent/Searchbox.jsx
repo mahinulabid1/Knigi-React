@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { closeFunc } from "./dataAndFunctions"
+import styles from "../../../public/css/cssComponent/searchBox.module.css";
 
 const SearchBox = ( { searchClick } ) => {
     const [ display , setDisplay ] = useState("d-none");
@@ -21,7 +22,7 @@ const SearchBox = ( { searchClick } ) => {
     return (
         <>
             {/*  SEARCH ENGINE(just kidding)  */}
-            < div className = { animation + " search-display " + display } >  
+            < div className = { animation + " " + display + " " + styles.search_display} >  
 
                 {/* <!-- text container div --> */}
                 < div >
@@ -31,7 +32,7 @@ const SearchBox = ( { searchClick } ) => {
                                 <button><img src="images/icons/search.png" alt="search anything" height="20" width="20"/> </button>
                         </div>
 
-                        <p>PRESS <span>[ESC]</span> TO CLOSE</p>
+                        <p className={styles.escBtn}>PRESS <span>[ESC]</span> TO CLOSE</p>
                     </form>
                 </div>
 
