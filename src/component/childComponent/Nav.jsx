@@ -52,7 +52,7 @@ const Navigation = () => {
                         onClick = { () => { clickHandler ( hamSwitch , setHamSwitch ) } }
                     />
 
-                    <div onClick = { () => { clickHandler ( shopSwitch, setShopSwitch ) } } className = "shop-btn flex " >
+                    <div onClick = { () => { clickHandler ( shopSwitch, setShopSwitch ) } } className = "shop-btn flex cursorPointer" >
                         SHOP 
                         <img className={ style.shop_btn_image } src = "images/icons/arrowdown.png" alt = "" height = "20" width = "20"/>
                     </div>
@@ -66,12 +66,12 @@ const Navigation = () => {
                 {/* ./app/img/icons/search.png */}
                 <div className = "flex flex-s-b" >
                     {/* <!-- search icon className --> */}
-                    <div className = {style.searchIcon}>
+                    <div className = {style.searchIcon + " cursorPointer"}>
                         <img src = "/images/icons/search.png" onClick = { () => { clickHandler ( searchSwitch , setSearchSwitch ) }} alt = "search anything" height = "20" width = "20"/>
                     </div>
 
-                    <div onClick = { () => { clickHandler ( cartSwitch , setCartSwitch ) }}>CART</div>
-                    <div id = "cart-open"><img className = {style.cartIcon} src = "/images/icons/cart.png" alt ="Shopping Cart" height ="20" width ="20"/></div>
+                    <div className="cursorPointer" onClick = { () => { clickHandler ( cartSwitch , setCartSwitch ) }}>CART</div>
+                    <div className="cursorPointer" id = "cart-open"><img className = {style.cartIcon} src = "/images/icons/cart.png" alt ="Shopping Cart" height ="20" width ="20"/></div>
                 </div>
             </nav>
 
