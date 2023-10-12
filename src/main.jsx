@@ -8,6 +8,7 @@ import {
 import Homepage from "./component/index"
 import StoriesPage from "./component/storiesDetailedPage"
 import ShopAll from './component/shopAll';
+import AllStoriesPage from './component/allStoriesPage';
 
 // universal css
 // I can access this rules in every Component
@@ -23,13 +24,18 @@ const router = createBrowserRouter ( [
   
   {
     path: "/allStories",
-    element : <StoriesPage />
+    element : <AllStoriesPage />
   },
 
   {
     path: "/shopall",
     element: <ShopAll />
-  }
+  },
+
+  // {
+  //   path: "/allStories",
+  //   element: <AllStoriesPage />
+  // },
 
 ] );
 
