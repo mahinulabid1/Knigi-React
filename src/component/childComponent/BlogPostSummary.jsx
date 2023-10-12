@@ -30,12 +30,12 @@ const BlogPostSummary = () => {
     return (
         <>
             <section className={styles.blogPost}>
-                <h3>FEATURED BLOG POSTS</h3>
+                <h3 className="text-center">FEATURED BLOG POSTS</h3>
                 <div className="flex flex-wrap flex-cen">
                     {
                         BlogPostSummaryData.map( ( cur ) => {
                             return(
-                                <div className="blog-posts-item">
+                                <div className={styles.blogPostItems}>
                                     <div><img src={cur.images} alt=""/></div>
 
                                     <div>
@@ -50,7 +50,7 @@ const BlogPostSummary = () => {
                     
 
                 </div>
-                <div className="visit-blog-btn"><a href="./allBlogs.php">Visit blog</a></div>
+                <div className={styles.visitBlogBtn}><a href="./allBlogs.php">Visit blog</a></div>
             </section>
         </>
     )
