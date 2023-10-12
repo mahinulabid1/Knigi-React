@@ -41,7 +41,7 @@ const shopData = [
 const NavLinksInfo = [
     {link : "/allStories" , text : "STORIES"} ,
     {link : "/films" , text : "FILMS"} ,
-    {link : "/shop" , text : "SHOP"} ,
+    {link : "/shopall" , text : "SHOP"} ,
     {link : "/blog" , text : "BLOG"} ,
     {link : "/about" , text : "ABOUT"} 
 ]
