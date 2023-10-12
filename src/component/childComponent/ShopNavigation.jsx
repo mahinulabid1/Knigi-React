@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { shopData, closeFunc } from  "./dataAndFunctions";
 
+import styles from "../../../public/css/cssComponent/shopNavigation.module.css";
 
 const ShopNavigation = ({ shopClick }) => {
 
@@ -23,15 +24,15 @@ const ShopNavigation = ({ shopClick }) => {
     return (
         <>
             {/* <!-- SHOP NAVIGATION MENU --> */}
-            <div className={displayShop + " book-shop-separate " + animation} >
+            <div className={displayShop + " " + animation + " " + styles.book_shop_separate } >
 
-                <div className="bs-container flex flex-wrap flex-s-a">
+                <div className={ "flex flex-wrap flex-s-a " + styles.container }>
                     {
                         shopData.map( ( cur ) => {
                             return (
                                 <a href = {cur.link} className="b-s-item">
 
-                                    <div className="b-s-image-container">
+                                    <div className={styles.image_container}>
 
                                         <img className="" src={cur.image} alt="" />
 
@@ -53,11 +54,11 @@ const ShopNavigation = ({ shopClick }) => {
 
                 </div>
 
-                <a className="shop-btn-shop-all-link transition" href="./shopall.php">SHOP ALL <i style={{ paddingLeft: "20px;" }} className="fas fa-chevron-right"></i></a>
+                <a className={"transition " + styles.shop_all_btn} href="./shopall.php">SHOP ALL <i style={{ paddingLeft: "20px;" }} className="fas fa-chevron-right"></i></a>
 
 
                 <div
-                    className="empty-space-close"
+                    className={styles.closeOnHover}
                     onMouseOver={
                         () => {
                             //preventing auto close
