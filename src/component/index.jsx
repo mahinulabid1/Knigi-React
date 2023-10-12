@@ -1,9 +1,10 @@
 import React from 'react'
-// import styles from "../../public/scss/dist/style.css"
 import Navigation from './childComponent/nav'
 import Stories from "./childComponent/stories"
 import BlogPostSummary from "./childComponent/BlogPostSummary"
 import Footer from "./childComponent/footer"
+
+import styles from "../../public/css/index.module.css"
 
 
 
@@ -16,24 +17,24 @@ export default function Homepage () {
 
 
             <header>
-                <div class="header-image-container">
+                <div className={styles.header_image_container + " flex flex-cen"}>
                     <img src="images/headerImg1.jpg" alt="books"/>
                     <img src="images/headerImg2.jpg" alt="books"/>
                     <img src="images/headerImg3.jpg" alt="books"/>
                 </div>
         
-                <div class="hero-text-container">
+                <div className={styles.hero_text_container}>
                     <h1>Buy Books, Anywhere</h1>
                     <a href="./shopall.php">Shop Now</a>
                 </div>
 
             </header>
 
-            <section class="flex flex-wrap about-us-section">
-                <div class="about-u-s-item">
-                    <h1>design <span class="design-span">and</span> travel</h1>
+            <section className={"flex flex-wrap "}>
+                <div className={styles.about_us_item}>
+                    <h1>design <span>and</span> travel</h1>
                 </div>
-                <div class="about-u-s-item">
+                <div className={styles.about_us_item}>
                     <h4>ABOUT US</h4>
                     <p class="about-us-p">Woven Magazine celebrates artists, designers, and entrepreneurs while exploring the history of design through travel.</p>
                 </div>
