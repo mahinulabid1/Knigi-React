@@ -8,6 +8,10 @@ import {
 import Homepage from "./component/index"
 import StoriesPage from "./component/storiesPage"
 
+// universal css
+// I can access this rules in every Component
+import "../public/css/cssComponent/universal_css.css"
+
 
 
 const router = createBrowserRouter ( [

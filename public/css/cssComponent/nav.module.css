@@ -1,0 +1,30 @@
+.nav {
+    height: 100px;
+}
+
+.ham_button {
+    margin-right: 30px;
+}
+
+.shop_btn_image {
+    margin-left : 10px; 
+}
+
+.navLogo{
+    display:inline-block; 
+    align-self: center;
+    color:black;
+    font-size: 40px;
+}
+
+.searchIcon, .cartIcon {
+    margin-top: 2px;
+}
+
+.searchIcon {
+    margin-right: 30px;
+}
+
+.cartIcon{
+    margin-left: 7px;
+}

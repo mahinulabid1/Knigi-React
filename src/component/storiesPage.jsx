@@ -1,5 +1,5 @@
 import React from 'react'
-import "../../public/scss/dist/stories.css"
+// import "../../public/scss/dist/stories.css"
 import Navigation from './childComponent/nav'
 import Stories from "./childComponent/stories"
 import BlogPostSummary from "./childComponent/BlogPostSummary"

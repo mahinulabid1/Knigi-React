@@ -1,9 +1,10 @@
 import React from 'react'
-import "../../public/scss/dist/style.css"
+// import styles from "../../public/scss/dist/style.css"
 import Navigation from './childComponent/nav'
 import Stories from "./childComponent/stories"
 import BlogPostSummary from "./childComponent/BlogPostSummary"
 import Footer from "./childComponent/footer"
+
 
 
 
