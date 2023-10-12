@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 
 import Homepage from "./component/index"
-import StoriesPage from "./component/storiesPage"
+import StoriesPage from "./component/storiesDetailedPage"
 
 // universal css
 // I can access this rules in every Component
