@@ -13,7 +13,7 @@ const StoriesData = [
     },
 
     {   
-        image: "images/stories/stories1.jpg",
+        image: "images/stories/stories2.jpg",
         storiesLink: "/stories",
         title: "CRÉ NATURAL BUILDING", 
         titleSpan: "| ARCHITECTURE",
@@ -23,7 +23,7 @@ const StoriesData = [
     },
 
     {   
-        image: "images/stories/stories1.jpg",
+        image: "images/stories/stories3.jpg",
         storiesLink: "/stories",
         title: "ALISON CARROLL", 
         titleSpan: "| ENTREPRENEUR",
@@ -33,7 +33,7 @@ const StoriesData = [
     },
 
     {   
-        image: "images/stories/stories1.jpg",
+        image: "images/stories/stories4.jpg",
         storiesLink: "/stories",
         title: "JUSTIN CHUNG", 
         titleSpan: "| PHOTOGRAPHER",
@@ -43,7 +43,7 @@ const StoriesData = [
     },
 
     {   
-        image: "images/stories/stories1.jpg",
+        image: "images/stories/stories5.jpg",
         storiesLink: "/stories",
         title: "JOEKENNETH MUSEAU", 
         titleSpan: "| CERAMICS",
@@ -53,7 +53,7 @@ const StoriesData = [
     },
 
     {   
-        image: "images/stories/stories1.jpg",
+        image: "images/stories/stories6.jpg",
         storiesLink: "/stories",
         title: "PAGE, AZ", 
         titleSpan: "| LANDSCAPE",
@@ -62,18 +62,9 @@ const StoriesData = [
         date : "10.05.19"
     },
 
-    {   
-        image: "images/stories/stories1.jpg",
-        storiesLink: "/stories",
-        title: "SHANTELL MARTIN ", 
-        titleSpan: "| ART",
-        linkText: "Well, ARE YOU?",
-        para: "Artist and educator Shantell Martin uses her work to ask the ultimate question of identity: Are you, YOU?",
-        date : "10.05.19"
-    },
 
     {   
-        image: "images/stories/stories1.jpg",
+        image: "images/stories/stories7.jpg",
         storiesLink: "/stories",
         title: "CODY COBB", 
         titleSpan: "| PHOTOGRAPHER",
@@ -83,7 +74,7 @@ const StoriesData = [
     },
 
     {   
-        image: "images/stories/stories1.jpg",
+        image: "images/stories/stories8.jpg",
         storiesLink: "/stories",
         title: "JULIANNE AHN ", 
         titleSpan: "| CERAMICS",
@@ -99,7 +90,7 @@ const Stories = () => {
         <>
             <section className={styles.their_stories}>
                 <h4>THE STORIES</h4>
-                <div className="their-stories-menu-container bound-padding flex flex-s-b">
+                <div className={"their-stories-menu-container bound-padding flex flex-s-b " + styles.menu_container}>
                     <div className="their-stories-menu">
                         {/* <!-- empty div --> */}
                     </div>
@@ -115,22 +106,22 @@ const Stories = () => {
                     </div>
                 </div>
 
-                <div className="stories-main-sec-container flex flex-wrap flex-s-b bound-padding">
+                <div className="flex flex-wrap flex-s-b bound-padding">
 
                     {
                         StoriesData.map( (cur ) => {
                             return (
-                                <div>
-                                    <div className="s-t-image-sec">
+                                <div className={styles.contentCard}>
+                                    <div className={styles.titleImageSection}>
                                         <img src={cur.image} alt="stories image"/>
                                             <div>
-                                                <div className="linkcontainer">
+                                                <div className={styles.linkContainer}>
                                                     <a href={cur.storiesLink} className="s-t-link">Read more</a>
                                                 </div>
                                             </div>
                                     </div>
 
-                                    <div className="s-t-content">
+                                    <div className={styles.contentText}>
                                         <h6>{cur.title} <span>{cur.titleSpan}</span></h6>
                                         <a href="./stories.php">{cur.linkText}</a>
                                         <p className="s-t-content-para">{cur.para} </p>
