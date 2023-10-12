@@ -1,7 +1,103 @@
+import styles from "../../../public/css/cssComponent/stories.module.css";
+
+
+const StoriesData = [
+    {   
+        image: "images/stories/stories1.jpg",
+        storiesLink: "/stories",
+        title: "SHANTELL MARTIN ", 
+        titleSpan: "| ART",
+        linkText: "Well, ARE YOU?",
+        para: "Artist and educator Shantell Martin uses her work to ask the ultimate question of identity: Are you, YOU?",
+        date : "10.05.19"
+    },
+
+    {   
+        image: "images/stories/stories1.jpg",
+        storiesLink: "/stories",
+        title: "CRÉ NATURAL BUILDING", 
+        titleSpan: "| ARCHITECTURE",
+        linkText: "Closer to Home",
+        para: "Bryce Ehrecke & Kelly Brown share how natural building could empower both a more beautiful and a more sustainable future.",
+        date : "11.11.19"
+    },
+
+    {   
+        image: "images/stories/stories1.jpg",
+        storiesLink: "/stories",
+        title: "ALISON CARROLL", 
+        titleSpan: "| ENTREPRENEUR",
+        linkText: "Wonder Valley",
+        para: "Wonder Valley is a built around the essentials for cultivating a rich existence, with good food and good health for a good life.",
+        date : "10.05.19"
+    },
+
+    {   
+        image: "images/stories/stories1.jpg",
+        storiesLink: "/stories",
+        title: "JUSTIN CHUNG", 
+        titleSpan: "| PHOTOGRAPHER",
+        linkText: "Faculty Department",
+        para: "Photographer Justin Chung’s project Faculty Department is an ode to the inspiration found in his subjects.",
+        date : "10.05.19"
+    },
+
+    {   
+        image: "images/stories/stories1.jpg",
+        storiesLink: "/stories",
+        title: "JOEKENNETH MUSEAU", 
+        titleSpan: "| CERAMICS",
+        linkText: "The Journey of Departure",
+        para: "Artist and educator Shantell Martin uses her work to ask the ultimate question of identity: Are you, YOU?",
+        date : "10.05.19"
+    },
+
+    {   
+        image: "images/stories/stories1.jpg",
+        storiesLink: "/stories",
+        title: "PAGE, AZ", 
+        titleSpan: "| LANDSCAPE",
+        linkText: "Antelope Canyon",
+        para: "Worn by wind and sand, these centuries old slot canyons are a sculpted masterpiece, such that only nature could reveal.",
+        date : "10.05.19"
+    },
+
+    {   
+        image: "images/stories/stories1.jpg",
+        storiesLink: "/stories",
+        title: "SHANTELL MARTIN ", 
+        titleSpan: "| ART",
+        linkText: "Well, ARE YOU?",
+        para: "Artist and educator Shantell Martin uses her work to ask the ultimate question of identity: Are you, YOU?",
+        date : "10.05.19"
+    },
+
+    {   
+        image: "images/stories/stories1.jpg",
+        storiesLink: "/stories",
+        title: "CODY COBB", 
+        titleSpan: "| PHOTOGRAPHER",
+        linkText: "Eons of Earth",
+        para: "As a photographer and solo traveler, Cody Cobb elevates the grandeur of the natural world beyond the boundary of civilization.",
+        date : "10.05.19"
+    },
+
+    {   
+        image: "images/stories/stories1.jpg",
+        storiesLink: "/stories",
+        title: "JULIANNE AHN ", 
+        titleSpan: "| CERAMICS",
+        linkText: "Object & Totem",
+        para: "Ceramicist Julianne Ahn reflects on the meditative process of her work and how it taught her balance between seasons of life.",
+        date : "10.05.19"
+    }
+] 
+
+
 const Stories = () => {
     return (
         <>
-            <section className="their-stories">
+            <section className={styles.their_stories}>
                 <h4>THE STORIES</h4>
                 <div className="their-stories-menu-container bound-padding flex flex-s-b">
                     <div className="their-stories-menu">
@@ -20,164 +116,32 @@ const Stories = () => {
                 </div>
 
                 <div className="stories-main-sec-container flex flex-wrap flex-s-b bound-padding">
-                    {/* <!-- 1 --> */}
-                    <div>
-                        <div className="s-t-image-sec">
-                            <img src="images/stories/stories1.jpg" alt="stories image"/>
+
+                    {
+                        StoriesData.map( (cur ) => {
+                            return (
                                 <div>
-                                    <div className="linkcontainer">
-                                        <a href="./stories.php" className="s-t-link">Read more</a>
+                                    <div className="s-t-image-sec">
+                                        <img src={cur.image} alt="stories image"/>
+                                            <div>
+                                                <div className="linkcontainer">
+                                                    <a href={cur.storiesLink} className="s-t-link">Read more</a>
+                                                </div>
+                                            </div>
                                     </div>
-                                </div>
-                        </div>
-                        <div className="s-t-content">
-                            <h6>SHANTELL MARTIN <span>| ART</span></h6>
-                            <a href="./stories.php">Well, ARE YOU?</a>
-                            <p className="s-t-content-para">Artist and educator Shantell Martin uses her work to ask the ultimate question
-                                of identity: Are you, YOU?
-                            </p>
-                            <span className="s-t-content-date">10.05.19</span>
-                        </div>
 
-                    </div>
-
-                    {/* <!-- 2 --> */}
-                    <div>
-                        <div className="s-t-image-sec">
-                            <img src="images/stories/stories2.jpg" alt="stories image"/>
-                                <div>
-                                    <div className="linkcontainer">
-                                        <a href="./stories.php" className="s-t-link">Read more</a>
+                                    <div className="s-t-content">
+                                        <h6>{cur.title} <span>{cur.titleSpan}</span></h6>
+                                        <a href="./stories.php">{cur.linkText}</a>
+                                        <p className="s-t-content-para">{cur.para} </p>
+                                        <span className="s-t-content-date">{cur.date}</span>
                                     </div>
-                                </div>
-                        </div>
-                        <div className="s-t-content">
-                            <h6>CRÉ NATURAL BUILDING <span>| ARCHITECTURE</span></h6>
-                            <a href="./stories.php">Closer to Home</a>
-                            <p className="s-t-content-para">Bryce Ehrecke & Kelly Brown share how natural building could
-                                empower both a more beautiful and a more sustainable future.
-                            </p>
-                            <span className="s-t-content-date">11.11.19</span>
-                        </div>
-                    </div>
 
-                    {/* <!-- 3 --> */}
-                    <div>
-                        <div className="s-t-image-sec">
-                            <img src="images/stories/stories3.jpg" alt="stories image"/>
-                                <div>
-                                    <div className="linkcontainer">
-                                        <a href="./stories.php" className="s-t-link">Read more</a>
-                                    </div>
                                 </div>
-                        </div>
-                        <div className="s-t-content">
-                            <h6>ALISON CARROLL <span>| ENTREPRENEUR</span></h6>
-                            <a href="./stories.php">Wonder Valley</a>
-                            <p className="s-t-content-para">Wonder Valley is a built around the essentials for cultivating a
-                                rich existence, with good food and good health for a good life.
-                            </p>
-                            <span className="s-t-content-date">10.05.19</span>
-                        </div>
-                    </div>
+                            )
+                        })
+                    }
 
-                    {/* <!-- 4 --> */}
-                    <div>
-                        <div className="s-t-image-sec">
-                            <img src="images/stories/stories4.jpg" alt="stories image"/>
-                                <div>
-                                    <div className="linkcontainer">
-                                        <a href="./stories.php" className="s-t-link">Read more</a>
-                                    </div>
-                                </div>
-                        </div>
-                        <div className="s-t-content">
-                            <h6>JUSTIN CHUNG <span>| PHOTOGRAPHER</span></h6>
-                            <a href="./stories.php">Faculty Department</a>
-                            <p className="s-t-content-para">Photographer Justin Chung’s project Faculty Department is an ode
-                                to the inspiration found in his subjects.
-                            </p>
-                            <span className="s-t-content-date">10.05.19</span>
-                        </div>
-                    </div>
-
-                    {/* <!-- 5 --> */}
-                    <div>
-                        <div className="s-t-image-sec">
-                            <img src="images/stories/stories5.jpg" alt="stories image"/>
-                                <div>
-                                    <div className="linkcontainer">
-                                        <a href="./stories.php" className="s-t-link">Read more</a>
-                                    </div>
-                                </div>
-                        </div>
-                        <div className="s-t-content">
-                            <h6>JOEKENNETH MUSEAU <span>| CERAMICS</span></h6>
-                            <a href="./stories.php">The Journey of Departure</a>
-                            <p className="s-t-content-para">As a tribute to his mother and the pain of losing her to cancer, Joekenneth Museau writes about
-                                the depths of pain, and the heights of growth he’s experienced through healing.
-                            </p>
-                            <span className="s-t-content-date">10.05.19</span>
-                        </div>
-                    </div>
-
-                    {/* <!-- 6 --> */}
-                    <div>
-                        <div className="s-t-image-sec">
-                            <img className="s-t-image-main" src="images/stories/stories6.jpg" alt="stories image"/>
-                                <div>
-                                    <div className="linkcontainer">
-                                        <a href="./stories.php" className="s-t-link">Read more</a>
-                                    </div>
-                                </div>
-                        </div>
-                        <div className="s-t-content">
-                            <h6>PAGE, AZ <span>| LANDSCAPE</span></h6>
-                            <a href="./stories.php">Antelope Canyon</a>
-                            <p className="s-t-content-para">Worn by wind and sand, these centuries old slot canyons are a sculpted masterpiece, such that only nature could reveal.
-                            </p>
-                            <span className="s-t-content-date">10.05.19</span>
-                        </div>
-                    </div>
-
-                    {/* <!-- 7 --> */}
-                    <div>
-                        <div className="s-t-image-sec">
-                            <img className="s-t-image-main" src="images/stories/stories7.jpg" alt="stories image"/>
-                                <div>
-                                    <div className="linkcontainer">
-                                        <a href="./stories.php" className="s-t-link">Read more</a>
-                                    </div>
-                                </div>
-                        </div>
-
-                        <div className="s-t-content">
-                            <h6>CODY COBB <span>| PHOTOGRAPHER</span></h6>
-                            <a href="./stories.php">Eons of Earth</a>
-                            <p className="s-t-content-para">As a photographer and solo traveler, Cody Cobb elevates the grandeur of the natural world beyond the boundary of civilization.
-                            </p>
-                            <span className="s-t-content-date">10.05.19</span>
-                        </div>
-                    </div>
-
-                    {/* <!-- 8 --> */}
-                    <div>
-                        <div className="s-t-image-sec">
-                            <img className="s-t-image-main" src="images/stories/stories8.jpg" alt="stories image"/>
-                                <div>
-                                    <div className="linkcontainer">
-                                        <a href="./stories.php" className="s-t-link">Read more</a>
-                                    </div>
-                                </div>
-                        </div>
-                        <div className="s-t-content">
-                            <h6>JULIANNE AHN <span>| CERAMICS</span></h6>
-                            <a href="./stories.php">Object & Totem</a>
-                            <p className="s-t-content-para">Ceramicist Julianne Ahn reflects on the meditative process of her work and how it taught her balance between seasons of life.
-                            </p>
-                            <span className="s-t-content-date">10.05.19</span>
-                        </div>
-                    </div>
                 </div>
 
             </section>
