@@ -1,0 +1,33 @@
+.cart_holder {
+    position: fixed;
+    top: 0px;
+    right: 0;
+    box-shadow: 7px 7px 10px rgba(0,0,0,.212);
+    width: 350px;
+    height: 80vh;
+    background: #fff;
+    overflow-y: auto;
+    z-index: 10;
+}
+
+.cartOverview {
+    padding: 20px 0 20px 10px;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.cartOverview span {
+    font-size: 14px;
+    color: rgba(0,0,0,.692);
+    margin-left: 10px;
+}
+
+.cartItem{
+    padding: 0 15px;
+    margin-bottom: 5px;
+    background: rgba(0,0,0,.082);
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: 700;
+    color: rgba(0,0,0,.814);  
+}
