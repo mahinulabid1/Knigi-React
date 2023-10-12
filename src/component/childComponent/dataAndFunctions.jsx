@@ -94,7 +94,7 @@ const BlogPostSummaryData = [
 const StoriesData = [
     {   
         image: "images/stories/stories1.jpg",
-        storiesLink: "/stories",
+        storiesLink: "/storiesDetail",
         title: "SHANTELL MARTIN ", 
         titleSpan: "| ART",
         linkText: "Well, ARE YOU?",
@@ -104,7 +104,7 @@ const StoriesData = [
 
     {   
         image: "images/stories/stories2.jpg",
-        storiesLink: "/stories",
+        storiesLink: "/storiesDetail",
         title: "CRÉ NATURAL BUILDING", 
         titleSpan: "| ARCHITECTURE",
         linkText: "Closer to Home",
@@ -114,7 +114,7 @@ const StoriesData = [
 
     {   
         image: "images/stories/stories3.jpg",
-        storiesLink: "/stories",
+        storiesLink: "/storiesDetail",
         title: "ALISON CARROLL", 
         titleSpan: "| ENTREPRENEUR",
         linkText: "Wonder Valley",
@@ -124,7 +124,7 @@ const StoriesData = [
 
     {   
         image: "images/stories/stories4.jpg",
-        storiesLink: "/stories",
+        storiesLink: "/storiesDetail",
         title: "JUSTIN CHUNG", 
         titleSpan: "| PHOTOGRAPHER",
         linkText: "Faculty Department",
@@ -134,7 +134,7 @@ const StoriesData = [
 
     {   
         image: "images/stories/stories5.jpg",
-        storiesLink: "/stories",
+        storiesLink: "/storiesDetail",
         title: "JOEKENNETH MUSEAU", 
         titleSpan: "| CERAMICS",
         linkText: "The Journey of Departure",
@@ -144,7 +144,7 @@ const StoriesData = [
 
     {   
         image: "images/stories/stories6.jpg",
-        storiesLink: "/stories",
+        storiesLink: "/storiesDetail",
         title: "PAGE, AZ", 
         titleSpan: "| LANDSCAPE",
         linkText: "Antelope Canyon",
@@ -155,7 +155,7 @@ const StoriesData = [
 
     {   
         image: "images/stories/stories7.jpg",
-        storiesLink: "/stories",
+        storiesLink: "/storiesDetail",
         title: "CODY COBB", 
         titleSpan: "| PHOTOGRAPHER",
         linkText: "Eons of Earth",
@@ -165,7 +165,7 @@ const StoriesData = [
 
     {   
         image: "images/stories/stories8.jpg",
-        storiesLink: "/stories",
+        storiesLink: "/storiesDetail",
         title: "JULIANNE AHN ", 
         titleSpan: "| CERAMICS",
         linkText: "Object & Totem",
