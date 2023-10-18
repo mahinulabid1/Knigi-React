@@ -60,7 +60,7 @@ const Navigation = () => {
                 </div>
 
                 <div>
-                    <a title = "Home Page" className = {style.navLogo} href = "index.php"> Knigi </a>
+                    <a title = "Home Page" className = {style.navLogo} href = "/"> Knigi </a>
                 </div>
 
                 {/* ./app/img/icons/search.png */}

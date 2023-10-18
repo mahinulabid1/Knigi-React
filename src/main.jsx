@@ -10,6 +10,9 @@ import StoriesPage from "./component/storiesDetailedPage"
 import ShopAll from './component/shopAll';
 import AllStoriesPage from './component/allStoriesPage';
 import AllBlogs from './component/allBlog';
+import ContactUs from './component/contactus';
+import TermsAndCondition from './component/termsAndCondition';
+import RequestInterView from './component/requestInterview';
 
 // universal css
 // I can access this rules in every Component
@@ -42,7 +45,23 @@ const router = createBrowserRouter ( [
     path: "/blog",
     element: <AllBlogs />
   },
+  
+  {
+    path: "/contactus",
+    element: <ContactUs />
+  },
 
+  {
+    path: "/termsandcondition",
+    element: <TermsAndCondition />
+  },
+
+  {
+    path: "/requestinterview",
+    element : <RequestInterView/>
+  },
+
+  
 ] );
 
 

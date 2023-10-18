@@ -43,7 +43,7 @@ const NavLinksInfo = [
     {link : "/films" , text : "FILMS"} ,
     {link : "/shopall" , text : "SHOP"} ,
     {link : "/blog" , text : "BLOG"} ,
-    {link : "/about" , text : "ABOUT"} 
+    {link : "/contactus" , text : "CONTACT US"} 
 ]
 
 
