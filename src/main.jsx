@@ -14,7 +14,7 @@ import ContactUs from './component/contactus';
 import TermsAndCondition from './component/termsAndCondition';
 import RequestInterView from './component/requestInterview';
 
-// universal css
+// universal css files
 // I can access this rules in every Component
 import "../public/css/cssComponent/universal_css.css"
 
