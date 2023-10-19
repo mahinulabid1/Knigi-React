@@ -9,49 +9,49 @@ import ContactUs from './component/contactus';
 import TermsAndCondition from './component/termsAndCondition';
 import RequestInterView from './component/requestInterview';
 
-const routeHandler = createBrowserRouter([
+const routeHandler = createBrowserRouter ( [
     {
-        path: "/",
-        element: <Homepage />,
+        path : "/",
+        element : < Homepage />,
     },
 
     {
-        path: "/allStories",
-        element: <AllStoriesPage />
+        path : "/allStories",
+        element : < AllStoriesPage />
     },
 
     {
-        path: "/shopall",
-        element: <ShopAll />
+        path : "/shopall",
+        element : < ShopAll />
     },
 
     {
-        path: "/storiesDetail",
-        element: <StoriesPage />
+        path : "/storiesDetail",
+        element : < StoriesPage />
     },
 
     {
-        path: "/blog",
-        element: <AllBlogs />
+        path : "/blog",
+        element : < AllBlogs />
     },
 
     {
-        path: "/contactus",
-        element: <ContactUs />
+        path : "/contactus",
+        element : < ContactUs />
     },
 
     {
-        path: "/termsandcondition",
-        element: <TermsAndCondition />
+        path : "/termsandcondition",
+        element : < TermsAndCondition />
     },
 
     {
-        path: "/requestinterview",
-        element: <RequestInterView />
+        path : "/requestinterview",
+        element : < RequestInterView />
     },
 
 
-]);
+] );
 
 
 export default routeHandler;
