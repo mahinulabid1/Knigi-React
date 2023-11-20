@@ -24,7 +24,7 @@ const Cart = ( { cartClick } ) => {
             <div className= { styles.cart_holder + " " + displayCart } > 
                 <div className="flex flex-s-b search-box">
                     <div className={styles.cartOverview}>Your Cart <span>$35 USD</span></div>
-                    <div className={styles.cartCloseBtn} onClick={()=>{setDisplayCart("d-none")}}><img src="images/icons/close.png" alt="" height="20" width="20" /></div>
+                    <div className={styles.cartCloseBtn} onClick={()=>{setDisplayCart("d-none")}}><img src="/images/icons/close.png" alt="" height="20" width="20" /></div>
                 </div>
 
                 <div>
@@ -35,7 +35,7 @@ const Cart = ( { cartClick } ) => {
                                 <div >{cur.title}</div>
                                 <div>{cur.price}</div>
                                 <div className="flex flex-align-center">
-                                    <img src="images/icons/delete.png" alt="delete from the queue" height="20" width="20" />
+                                    <img src="/images/icons/delete.png" alt="delete from the queue" height="20" width="20" />
                                 </div>
                             </div>
                         )

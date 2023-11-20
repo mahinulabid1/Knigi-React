@@ -29,7 +29,7 @@ const SearchBox = ( { searchClick } ) => {
                     < form action = "" >
                         <div className="flex flex-wrap flex-s-b">
                             <input type="text" placeholder="Search Woven + Hit Enter"/>
-                                <button><img src="images/icons/search.png" alt="search anything" height="20" width="20"/> </button>
+                                <button><img src="/images/icons/search.png" alt="search anything" height="20" width="20"/> </button>
                         </div>
 
                         <p className={styles.escBtn}>PRESS <span>[ESC]</span> TO CLOSE</p>
@@ -37,7 +37,7 @@ const SearchBox = ( { searchClick } ) => {
                 </div>
 
                 <div className="search-close-btn flex flex-align-center flex-s-a" onClick = { ( ) => { closeFunc ( setDisplay, setAnimation ) } }>
-                    <img src="images/icons/close.png" alt="" height="20" width="20"/>
+                    <img src="/images/icons/close.png" alt="" height="20" width="20"/>
                 </div>
             </div>
         </>
