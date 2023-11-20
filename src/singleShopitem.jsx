@@ -1,10 +1,27 @@
 import {useState, useEffect} from 'react'
+import { useParams } from "react-router-dom";
+import axios from 'axios'
 import Navigation from "./component/childComponent/nav"
 import Footer from "./component/childComponent/footer"
 import styles from "../public/css/singleShopItem.module.css"
 
 const SingleShopItem = ( ) => {
     const [ cartAmount, setCartAmount ] = useState(1);
+    const [data, setData] = useState('');
+    const [price, setPrice ] = useState();
+    let { id } = useParams();
+    useEffect( () => {
+        axios.get(`http://localhost:8000/api/v1/shoplist?id=${id}`)
+        .then( (result) =>{
+            // axios return an object where "data" field has the database data
+            // other data are related to connection information
+            console.log(result.data.productPrice.discountedPrice); 
+            let x = result.data.productPrice.discountedPrice; 
+            setPrice(x);
+            setData(result.data); 
+
+        })
+    }, [])
 
     const increaseAmount = ( ) => {
         setCartAmount(cartAmount+1);
@@ -25,23 +42,17 @@ const SingleShopItem = ( ) => {
 
                 <div>  {/* flex item 1 */}
                     
-                    <h2 className = { styles.content_header }>Woven Issue Four</h2>
+                    <h2 className = { styles.content_header }>
+                        {data.productTitle} 
+                    </h2>
                         
-                    <p className = { styles.price_tag }>$18 USD</p>
+                    <p className = { styles.price_tag }> 
+                        {/* { data.productPrice.discountedPrice === undefined ? data.productPrice.regularPrice : data.productPrice.discountedPrice }  */}
+                        {"$" + price + " USD"}
+                    </p>
+
                     <p className = { styles.product_content }>
-                        Issue 4 explores the paradoxes at play in our world: death and rebirth, old and new, past and 
-                        future. We take on a mindset of endless growth and the many catalysts we encounter in the 
-                        creative process: setbacks, loss, imagination, and serendipity. From poetry to plants, this 
-                        issue looks intently into the face of the immeasurable forces that propel us forward, and 
-                        meditates on our role in designing the future. <br/> <br/> From Manly, Australia to Victoria, British 
-                        Columbia, from Long Beach, California to Jersey City, New Jersey, we share the stories of
-                        nine artists, designers, and entrepreneurs who are holding the tension between the past,
-                        present, and future. You’ll meet modern day poet Joekenneth Museau who channelled the loss
-                        of his mother to cancer into a guidebook for grief, Julianne Ahn who took up ceramics as
-                        a meditation, and photographer Cody Cobb whose solo expeditions take us back in time.
-                        We study the cosmology of city planning at Arcosanti, an experimental architecture 
-                        site in the Arizona desert, and glimpse the mythical symbols of Antelope Canyon through 
-                        the eyes of Navajo guides.
+                        {data.productAboutInfo} 
                     </p>
 
                     <div className = { styles.cart_option }>
@@ -64,7 +75,7 @@ const SingleShopItem = ( ) => {
 
                 <div>       {/* flex item 2*/}
                     <div className = { styles.grey_box }>
-                        <img src="images/book1.jpg" /> 
+                        <img src = { data.productImage } /> 
                     </div>
                     
                 </div>

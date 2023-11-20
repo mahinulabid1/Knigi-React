@@ -51,7 +51,7 @@ const routeHandler = createBrowserRouter ( [
         element : < RequestInterView />
     },
     {
-        path : "/shopItemDetails",
+        path : "/shopItemDetails/:id",
         element : <SingleShopItem />
     }
 
