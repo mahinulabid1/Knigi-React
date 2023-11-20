@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { shopData, closeFunc } from  "./dataAndFunctions";
 import axios from "axios"
 import styles from "../../../public/css/cssComponent/shopNavigation.module.css";
+import { useParams } from "react-router-dom";
 
 const ShopNavigation = ({ shopClick }) => {
 
@@ -14,9 +15,6 @@ const ShopNavigation = ({ shopClick }) => {
         axios.get('http://localhost:8000/api/v1/shoplist?limit=4')
         .then( ( res ) => {
             setData(res.data);
-            console.log(res.data);
-
-            
         })
     }, [])          // [] if it is empty, it will execute the firsttime it mounts
 
@@ -31,6 +29,8 @@ const ShopNavigation = ({ shopClick }) => {
             setTime(Date.now());
         }
     }, [shopClick]);    // when shopClick component changes it will call useEffect()
+    
+    
 
 
     return (
@@ -42,7 +42,7 @@ const ShopNavigation = ({ shopClick }) => {
                     {
                         data.map( ( cur, index ) => {
                             return (
-                                <a href ='/shopItemDetails' className="b-s-item" key={index.toString()}>
+                                <a href ={'/shopItemDetails/' + cur._id} className="b-s-item" key={index.toString()}>
 
                                     <div className={styles.image_container}>
 
