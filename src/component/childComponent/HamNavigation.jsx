@@ -37,7 +37,7 @@ const HamNavigation = ( { hamClick } ) => {
                     
                     <div onClick={ () => { closeFunc ( setDisplay, setAnimation ); } } className = {styles.ham_close_btn} id = "close-nav-in-ham">
                         
-                        <img src = "images/icons/close.png" alt = "" height = "20" width = "20" />
+                        <img src = "/images/icons/close.png" alt = "" height = "20" width = "20" />
 
                     </div>
                 </div>
