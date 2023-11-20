@@ -2,8 +2,8 @@ import styles from "../../public/css/shopAll.module.css"
 import Navigation from './childComponent/nav'
 
 
-const ShopAll = () => {
-    return(
+const ShopAll = ( ) => {
+    return (
         <>  
             <Navigation />
             <header className={styles.header}>

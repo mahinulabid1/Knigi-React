@@ -34,10 +34,6 @@
     border-bottom: 2px solid rgba(0,128,0,.315);
 }
 
-.textHolder{
-
-}
-
 .input:focus{
     outline: none;
 }
