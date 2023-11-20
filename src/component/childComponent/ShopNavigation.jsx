@@ -1,12 +1,24 @@
 import { useState, useEffect } from "react";
 import { shopData, closeFunc } from  "./dataAndFunctions";
-
+import axios from "axios"
 import styles from "../../../public/css/cssComponent/shopNavigation.module.css";
 
 const ShopNavigation = ({ shopClick }) => {
 
     const [displayShop, setDisplayShop] = useState("d-none");
     const [animation, setAnimation] = useState('slideUp');
+
+    const [data, setData] = useState([]);
+
+    useEffect( () => {
+        axios.get('http://localhost:8000/api/v1/shoplist?limit=4')
+        .then( ( res ) => {
+            setData(res.data);
+            console.log(res.data);
+
+            
+        })
+    }, [])          // [] if it is empty, it will execute the firsttime it mounts
 
 
     // auto close prevent on hover
@@ -18,7 +30,7 @@ const ShopNavigation = ({ shopClick }) => {
             setDisplayShop("");
             setTime(Date.now());
         }
-    }, [shopClick]);
+    }, [shopClick]);    // when shopClick component changes it will call useEffect()
 
 
     return (
@@ -28,20 +40,20 @@ const ShopNavigation = ({ shopClick }) => {
 
                 <div className={ "flex flex-wrap flex-s-a " + styles.container }>
                     {
-                        shopData.map( ( cur ) => {
+                        data.map( ( cur ) => {
                             return (
-                                <a href = {cur.link} className="b-s-item">
+                                <a href ='/shopItemDetails' className="b-s-item">
 
                                     <div className={styles.image_container}>
 
-                                        <img className="" src={cur.image} alt="" />
+                                        <img className="" src={cur.productImage} alt="" />
 
                                         <div>
-                                            <p>{cur.title}</p>
+                                            <p>{cur.productTitle}</p>
                                             <p>
-                                                <span className = "discounted-regular-price" > { cur.discountedRegularPrice } </span>
-                                                <span className = "discounted-price" > { cur.discountedPrice } </span> 
-                                                <span className = "regular-price" > { cur.regularPrice } </span>
+                                                <span className = "discounted-regular-price" ><s> {cur.productPrice.regularPriceBeforeDiscount !== undefined ? "$" + cur.productPrice.regularPriceBeforeDiscount : ""  } </s></span>
+                                                <span className = "discounted-price" > {cur.productPrice.discountedPrice !== undefined ? "$" + cur.productPrice.discountedPrice : ""} </span> 
+                                                <span className = "regular-price" > {cur.productPrice.regularPrice !== undefined ? "$" + cur.productPrice.regularPrice : ""} </span>
                                             </p>
                                         </div>
 
