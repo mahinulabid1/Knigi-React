@@ -8,6 +8,7 @@ import AllBlogs from './component/allBlog';
 import ContactUs from './component/contactus';
 import TermsAndCondition from './component/termsAndCondition';
 import RequestInterView from './component/requestInterview';
+import SingleShopItem from "./singleShopitem";
 
 const routeHandler = createBrowserRouter ( [
     {
@@ -49,6 +50,10 @@ const routeHandler = createBrowserRouter ( [
         path : "/requestinterview",
         element : < RequestInterView />
     },
+    {
+        path : "/shopItemDetails",
+        element : <SingleShopItem />
+    }
 
 
 ] );
