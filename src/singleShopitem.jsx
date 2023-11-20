@@ -1,8 +1,23 @@
+import {useState, useEffect} from 'react'
 import Navigation from "./component/childComponent/nav"
 import Footer from "./component/childComponent/footer"
 import styles from "../public/css/singleShopItem.module.css"
 
 const SingleShopItem = ( ) => {
+    const [ cartAmount, setCartAmount ] = useState(1);
+
+    const increaseAmount = ( ) => {
+        setCartAmount(cartAmount+1);
+        console.log("increase clicked")
+    }
+
+    const decreaseAmount = () => {
+        if(cartAmount > 0) {
+            setCartAmount(cartAmount + 1);
+            console.log("decreased click")
+        }
+    }
+
     return (
         <>
             <Navigation />
@@ -31,9 +46,16 @@ const SingleShopItem = ( ) => {
 
                     <div className = { styles.cart_option }>
                         <p className = { styles.cart_note }>*US orders only</p>
+
                         <div className="cart-function">
                             <a className = { styles.add_cartBtn + " transition" } href="#">ADD TO CART</a>
-                            <div className = { styles.numberFunction }><span className = { styles.plus }>+</span> <span className = { styles.minus }>1</span>  <span className = { styles.minus }>-</span></div>
+
+                            <div className = { styles.numberFunction }>
+                                <span className = { styles.plus } onClick={() => {increaseAmount()}}>+</span> 
+                                <span className = { styles.minus }>{cartAmount}</span>  
+                                <span className = { styles.minus } onClick={() => {decreaseAmount()}}>-</span>
+                            </div>
+
                         </div>
                     </div>
 

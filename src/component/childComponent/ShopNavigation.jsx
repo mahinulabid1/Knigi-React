@@ -40,9 +40,9 @@ const ShopNavigation = ({ shopClick }) => {
 
                 <div className={ "flex flex-wrap flex-s-a " + styles.container }>
                     {
-                        data.map( ( cur ) => {
+                        data.map( ( cur, index ) => {
                             return (
-                                <a href ='/shopItemDetails' className="b-s-item">
+                                <a href ='/shopItemDetails' className="b-s-item" key={index.toString()}>
 
                                     <div className={styles.image_container}>
 
@@ -66,7 +66,7 @@ const ShopNavigation = ({ shopClick }) => {
 
                 </div>
 
-                <a className={"transition " + styles.shop_all_btn} href="./shopall.php">SHOP ALL <i style={{ paddingLeft: "20px;" }} className="fas fa-chevron-right"></i></a>
+                <a className={"transition " + styles.shop_all_btn} href="./shopall.php">SHOP ALL <i style={{ paddingLeft: "20px" }} className="fas fa-chevron-right"></i></a>
 
 
                 <div

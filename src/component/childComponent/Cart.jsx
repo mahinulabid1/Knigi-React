@@ -31,8 +31,8 @@ const Cart = ( { cartClick } ) => {
                     {/* cart items */}
                     { dataInCart.map( (cur, index ) => {
                         return(
-                            <div className={styles.cartItem + " flex flex-align-center flex-s-b"}>
-                                <div>{cur.title}</div>
+                            <div className={styles.cartItem + " flex flex-align-center flex-s-b"} key={index.toString()}>
+                                <div >{cur.title}</div>
                                 <div>{cur.price}</div>
                                 <div className="flex flex-align-center">
                                     <img src="images/icons/delete.png" alt="delete from the queue" height="20" width="20" />
