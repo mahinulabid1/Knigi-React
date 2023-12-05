@@ -1,5 +1,4 @@
 import {useState} from "react"
-
 import HamNavigation from "./HamNavigation"
 import ShopNavigation from "./shopNavigation"
 import SearchBox from "./searchbox"
@@ -16,16 +15,18 @@ const Navigation = () => {
     const [ cartSwitch, setCartSwitch ] = useState ( 0 );
     const [ searchSwitch, setSearchSwitch ] = useState( 0 );
 
+    const [ cartDisplay, setCartDisplay ] = useState("d-none");
+    const [ cartAnimation, setCartAnimation ] = useState('slideUp');
+
     const clickHandler = ( target , setResponse) => {
-        // alert("handler working")
         /*
             Description:
             =============
             This click handler sends a small response to another component 
             named: "HamNavigation" in another file: "HamNavigation.jsx"
 
-            It simply says button clicked and then reset its value so that
-            it can send the same signal again.
+            It simply says button clicked by setting value to 1 
+            and then reset its value so that it can send the same signal again.
         */
         if ( target === 0 ) {
             setResponse( 1 );
@@ -43,7 +44,7 @@ const Navigation = () => {
 
                 <div className = "flex" key={1}>
 
-                    {/* Hambar */}
+                    {/* Hambar image/icon */}
                     <img 
                         src="/images/hambar.png" 
                         alt="" height="30" 
