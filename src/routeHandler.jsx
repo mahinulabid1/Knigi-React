@@ -9,6 +9,7 @@ import ContactUs from './component/contactus';
 import TermsAndCondition from './component/termsAndCondition';
 import RequestInterView from './component/requestInterview';
 import SingleShopItem from "./singleShopitem";
+import FormComponent from "./component/signIn";
 
 const routeHandler = createBrowserRouter ( [
     {
@@ -53,8 +54,11 @@ const routeHandler = createBrowserRouter ( [
     {
         path : "/shopItemDetails/:id",
         element : <SingleShopItem />
+    },
+    {
+        path : "/login",
+        element : <FormComponent/>
     }
-
 
 ] );
 
