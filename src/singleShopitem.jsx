@@ -9,7 +9,7 @@ const SingleShopItem = ( ) => {
     const [ cartAmount, setCartAmount ] = useState(1);
     const [data, setData] = useState('');
     const [price, setPrice ] = useState();
-    let { id } = useParams();
+    let { id } = useParams(); // fetching ID parameter from URL 
     useEffect( () => {
         axios.get(`http://localhost:8000/api/v1/shoplist?id=${id}`)
         .then( (result) =>{
