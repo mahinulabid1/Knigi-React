@@ -1,4 +1,4 @@
-import styles from "../../public/css/termsAndCondition.module.css"
+import styles from "./termsAndCondition.module.css"
 import Footer from "../../ui/footer";
 import Navigation from "../../ui/Nav";
 

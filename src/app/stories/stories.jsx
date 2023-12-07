@@ -1,4 +1,4 @@
-import styles from "../../../public/css/cssComponent/stories.module.css";
+import styles from "./stories.module.css";
 import { StoriesData } from "../../data&functions/dataAndFunctions";
 
 

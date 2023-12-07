@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from 'axios'
 import Navigation from "../../ui/Nav"
 import Footer from "../../ui/footer"
-import styles from "../public/css/singleShopItem.module.css"
+import styles from "./singleShopItem.module.css"
 
 const SingleShopItem = ( ) => {
     const [ cartAmount, setCartAmount ] = useState(1);

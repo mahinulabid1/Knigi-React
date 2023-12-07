@@ -1,4 +1,4 @@
-import styles from "../../../public/css/cssComponent/allBlogsPart2.module.css";
+import styles from "./allBlogsPart2.module.css";
 
 const AllBlogsPart2 = () => {
     return (

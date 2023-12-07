@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react";
-import styles from "../../../public/css/cssComponent/cart.module.css";
+import styles from "./css/cart.module.css";
 
 const dataInCart = [
     { title : "Kingi Issue 4" , price: "$ 20 USD" },

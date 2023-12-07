@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { closeFunc } from  "../data&functions/dataAndFunctions";
 import axios from "axios"
-import styles from "../../../public/css/cssComponent/shopNavigation.module.css";
+import styles from "./css/shopNavigation.module.css";
 import { useParams } from "react-router-dom";
 
 const ShopNavigation = ({ shopClick }) => {

@@ -5,7 +5,7 @@ import SearchBox from "./searchbox"
 import Cart from "./Cart"
 
 
-import style from "../../../public/css/cssComponent/nav.module.css";
+import style from "./css/nav.module.css";
 
 
 const Navigation = () => {

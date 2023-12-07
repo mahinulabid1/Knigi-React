@@ -1,4 +1,4 @@
-import styles from "../../public/css/AllBlogs.module.css"
+import styles from "./AllBlogs.module.css"
 import React from 'react'
 import Navigation from '../../ui/Nav'
 import Stories from "../stories/stories"

@@ -1,4 +1,4 @@
-import styles from "../../../public/css/cssComponent/allBlogsPart1.module.css";
+import styles from "./allBlogsPart1.module.css";
 
 
 const AllBlogsPartOneData = [

@@ -1,4 +1,4 @@
-import styles from "../../../public/css/cssComponent/footer.module.css"
+import styles from "./css/footer.module.css"
 
 const Footer = () => {
     return (

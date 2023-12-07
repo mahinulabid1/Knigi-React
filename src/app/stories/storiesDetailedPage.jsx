@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from "../../public/css/storiesDetailedPage.module.css"
+import styles from "./storiesDetailedPage.module.css"
 import Navigation from '../../ui/Nav'
 import BlogPostSummary from "../../ui/BlogPostSummary"
 import Footer from "../../ui/footer"

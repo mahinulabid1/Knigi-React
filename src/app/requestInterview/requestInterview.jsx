@@ -1,4 +1,4 @@
-import styles from "../../public/css/requestInterview.module.css"
+import styles from "./requestInterview.module.css"
 import Footer from "../../ui/footer";
 import Navigation from "../../ui/Nav";
 

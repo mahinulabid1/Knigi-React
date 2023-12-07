@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { closeFunc } from "../data&functions/dataAndFunctions"
-import styles from "../../../public/css/cssComponent/searchBox.module.css";
+import styles from "./css/searchBox.module.css";
 
 const SearchBox = ( { searchClick } ) => {
     const [ display , setDisplay ] = useState("d-none");
