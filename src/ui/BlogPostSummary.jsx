@@ -1,5 +1,5 @@
 import styles from "../../../public/css/cssComponent/blogPostSummary.module.css";
-import { BlogPostSummaryData } from "./dataAndFunctions";
+import { BlogPostSummaryData } from "../data&functions/dataAndFunctions";
 
 const BlogPostSummary = () => {
     return (

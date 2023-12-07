@@ -1,15 +1,15 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import Homepage from "./app/landingPage/index"
-import StoriesPage from "./component/storiesDetailedPage"
-import ShopAll from './component/shopAll';
-import AllStoriesPage from './component/allStoriesPage';
+import StoriesPage from "./app/stories/storiesDetailedPage"
+import ShopAll from './app/shop/shopAll';
+import AllStoriesPage from './app/stories/allStoriesPage';
 import AllBlogs from './app/Blogs/allBlog';
-import ContactUs from './component/contactus';
-import TermsAndCondition from './component/termsAndCondition';
-import RequestInterView from './component/requestInterview';
-import SingleShopItem from "./singleShopitem";
-import FormComponent from "./component/signIn";
+import ContactUs from './app/contact/contactus';
+import TermsAndCondition from './app/terms&condition/termsAndCondition';
+import RequestInterView from './app/requestInterview/requestInterview';
+import SingleShopItem from "./app/shop/singleShopitem";
+import FormComponent from "./app/signIn&CreateAccount/signIn";
 
 const routeHandler = createBrowserRouter ( [
     {

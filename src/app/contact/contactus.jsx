@@ -1,6 +1,6 @@
-import Footer from "./childComponent/footer";
-import Navigation from "./childComponent/nav";
-import styles from "../../public/css/contactUs.module.css"
+import Footer from "../../ui/footer";
+import Navigation from "../../ui/Nav";
+import styles from "./contactUs.module.css"
 
 const ContactUs = ( ) => {
 

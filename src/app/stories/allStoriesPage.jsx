@@ -1,7 +1,7 @@
-import Navigation from './childComponent/nav'
-import Stories from "./childComponent/stories"
-import BlogPostSummary from "./childComponent/BlogPostSummary"
-import Footer from "./childComponent/footer"
+import Navigation from '../../ui/Nav'
+import Stories from "./stories"
+import BlogPostSummary from "../../ui/BlogPostSummary"
+import Footer from "../../ui/footer"
 import styles from "../../public/css/allStoriesPage.module.css"
 
 const AllStoriesPage = () => {

@@ -1,11 +1,11 @@
 import styles from "../../public/css/AllBlogs.module.css"
 import React from 'react'
-import Navigation from './childComponent/nav'
-import Stories from "./childComponent/stories"
-import BlogPostSummary from "./childComponent/BlogPostSummary"
-import Footer from "./childComponent/footer"
-import AllBlogsPartOne from "./childComponent/allBlogsPart1"
-import AllBlogsPart2 from "./childComponent/allBlogsPart2"
+import Navigation from '../../ui/Nav'
+import Stories from "../stories/stories"
+import BlogPostSummary from "../../ui/BlogPostSummary"
+import Footer from "../../ui/footer"
+import AllBlogsPartOne from "./allBlogsPart1"
+import AllBlogsPart2 from "./allBlogsPart2"
 
 const AllBlogs = ( ) => {
     return( 

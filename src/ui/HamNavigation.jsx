@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { closeFunc } from  "./dataAndFunctions";
+import { closeFunc } from  "../data&functions/dataAndFunctions";
 import styles from "../../../public/css/cssComponent/hamNav.module.css";    //css module
 
 

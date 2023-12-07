@@ -1,5 +1,5 @@
 import styles from "../../../public/css/cssComponent/stories.module.css";
-import { StoriesData } from "./dataAndFunctions";
+import { StoriesData } from "../../data&functions/dataAndFunctions";
 
 
 

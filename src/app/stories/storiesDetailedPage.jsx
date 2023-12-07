@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from "../../public/css/storiesDetailedPage.module.css"
-import Navigation from './childComponent/nav'
-import BlogPostSummary from "./childComponent/BlogPostSummary"
-import Footer from "./childComponent/footer"
+import Navigation from '../../ui/Nav'
+import BlogPostSummary from "../../ui/BlogPostSummary"
+import Footer from "../../ui/footer"
 
 
 const StoriesPage = ( ) => {

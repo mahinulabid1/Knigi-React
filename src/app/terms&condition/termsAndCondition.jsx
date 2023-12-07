@@ -1,6 +1,6 @@
 import styles from "../../public/css/termsAndCondition.module.css"
-import Footer from "./childComponent/footer";
-import Navigation from "./childComponent/nav";
+import Footer from "../../ui/footer";
+import Navigation from "../../ui/Nav";
 
 
 const TermsAndCondition = ( ) => {

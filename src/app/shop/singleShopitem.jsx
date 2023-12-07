@@ -1,8 +1,8 @@
 import {useState, useEffect} from 'react'
 import { useParams } from "react-router-dom";
 import axios from 'axios'
-import Navigation from "./component/childComponent/nav"
-import Footer from "./component/childComponent/footer"
+import Navigation from "../../ui/Nav"
+import Footer from "../../ui/footer"
 import styles from "../public/css/singleShopItem.module.css"
 
 const SingleShopItem = ( ) => {

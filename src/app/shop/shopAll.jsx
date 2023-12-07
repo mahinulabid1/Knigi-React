@@ -1,9 +1,9 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 import styles from "../../public/css/shopAll.module.css"
-import Navigation from './childComponent/nav'
-import Footer from './childComponent/footer'
-import BlogPostSummary from './childComponent/BlogPostSummary'
+import Navigation from '../../ui/Nav'
+import Footer from '../../ui/footer'
+import BlogPostSummary from '../../ui/BlogPostSummary'
 
 
 

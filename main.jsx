@@ -4,7 +4,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import routeHandler from './routeHandler';
+import routeHandler from './src/routeHandler';
 
 // universal css files
 // I can access this rules in every Component

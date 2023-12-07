@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
-import Navigation from "./childComponent/nav"
-import Footer from "./childComponent/footer"
+import Navigation from "../../ui/Nav"
+import Footer from "../../ui/footer"
 import styles from "../../public/css/SignIn.module.css"
 
 // const [formState, setFormState] = useState('signin');
