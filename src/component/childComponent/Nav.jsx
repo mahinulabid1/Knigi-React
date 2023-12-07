@@ -66,13 +66,18 @@ const Navigation = () => {
 
                 {/* ./app/img/icons/search.png */}
                 <div className = "flex flex-s-b" key={3}>
-                    {/* <!-- search icon className --> */}
+                    {/* user btn: click to see full user information */}
+                    <div className={style.userBtn}>
+                        <a href="/userDetails">Username</a>
+                    </div>
+
+                    {/* <!-- search icon  --> */}
                     <div className = {style.searchIcon + " cursorPointer"}>
                         <img src = "/images/icons/search.png" onClick = { () => { clickHandler ( searchSwitch , setSearchSwitch ) }} alt = "search anything" height = "20" width = "20"/>
                     </div>
 
-                    <div className="cursorPointer" onClick = { () => { clickHandler ( cartSwitch , setCartSwitch ) }}>CART</div>
-                    <div className="cursorPointer" id = "cart-open"><img className = {style.cartIcon} src = "/images/icons/cart.png" alt ="Shopping Cart" height ="20" width ="20"/></div>
+                    {/* <div className="cursorPointer" onClick = { () => { clickHandler ( cartSwitch , setCartSwitch ) }}>CART</div> */}
+                    <div className="cursorPointer" onClick = { () => { clickHandler ( cartSwitch , setCartSwitch ) }}  id = "cart-open"><img className = {style.cartIcon} src = "/images/icons/cart.png" alt ="Shopping Cart" height ="20" width ="20"/></div>
                 </div>
             </nav>
 
