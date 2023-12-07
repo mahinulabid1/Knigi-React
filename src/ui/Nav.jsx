@@ -1,4 +1,4 @@
-import {useState} from "react"
+import { useState } from "react"
 import HamNavigation from "./HamNavigation"
 import ShopNavigation from "./shopNavigation"
 import SearchBox from "./searchbox"
