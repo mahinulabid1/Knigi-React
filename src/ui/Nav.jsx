@@ -3,6 +3,11 @@ import HamNavigation from "./HamNavigation"
 import ShopNavigation from "./shopNavigation"
 import SearchBox from "./searchbox"
 import Cart from "./Cart"
+import { 
+    navigationSwitch,
+    searchSwitch,
+    shopNavigationSwitch
+} from "../data&functions/switch"
 
 
 import style from "./css/nav.module.css";
@@ -10,15 +15,23 @@ import style from "./css/nav.module.css";
 
 const Navigation = () => {
 
-    const [ hamSwitch, setHamSwitch ] = useState ( 0 ); //0 = close navigation , 1 = open ham navigation
+    const [ hamDisplay, setHamDisplay ] = useState ( 'd-none' ); 
+    const [ hamAnimation, setHamAnimation ] = useState( 'slideUp' );
     const [ shopSwitch, setShopSwitch ] = useState ( 0 );
     const [ cartSwitch, setCartSwitch ] = useState ( 0 );
-    const [ searchSwitch, setSearchSwitch ] = useState( 0 );
+    const [ searchDisplay, setSearchDisplay ] = useState( 'd-none' );
+    const [ searchAnimation, setSearchAnimation ] = useState( 'slideUp' );
 
     const [ cartDisplay, setCartDisplay ] = useState("d-none");
     const [ cartAnimation, setCartAnimation ] = useState('slideUp');
 
-    const clickHandler = ( target , setResponse) => {
+    const [ shopDisplay, setShopDisplay ] = useState( 'd-none' ) ;
+    const [ shopAnimation, setShopAnimation ] = useState ('slideUp')
+    const [ shopCloseValidatoin, setShopCloseValidatoin ] = useState( 0 );  
+
+    
+
+    // const clickHandler = ( target , setResponse) => {
         /*
             Description:
             =============
@@ -28,15 +41,71 @@ const Navigation = () => {
             It simply says button clicked by setting value to 1 
             and then reset its value so that it can send the same signal again.
         */
-        if ( target === 0 ) {
-            setResponse( 1 );
+    //     if ( target === 0 ) {
+    //         setResponse( 1 );
 
-            setTimeout ( () => {
-                setResponse ( 0 );
-            } , 300 )
+    //         setTimeout ( () => {
+    //             setResponse ( 0 );
+    //         } , 300 )
             
-        }
-    }
+    //     }
+    // }
+
+    // hambar close button
+    const hamNavCloseBtn = (
+        <>
+        <div onClick={ 
+            () => { 
+                navigationSwitch ( 
+                    [ hamDisplay, setHamDisplay ], 
+                    [ hamAnimation, setHamAnimation ]
+                ) 
+            } 
+        } >     
+            <img src = "/images/icons/close.png" alt = "" height = "20" width = "20" />
+        </div>
+        </>
+    );
+
+    // search close icon
+    const searchCloseBtn = (
+        <>
+        <div 
+            className="search-close-btn flex flex-align-center flex-s-a" 
+            onClick = { ( ) => { 
+                searchSwitch( 
+                    [ searchDisplay, setSearchDisplay ],  
+                    [ searchAnimation, setSearchAnimation ] 
+                )
+            } }
+        >
+            <img src="/images/icons/close.png" alt="" height="20" width="20"/>
+        </div>
+        </>
+    )
+
+    // shop close bar 
+    const shopCloseBar = (
+        <>
+        <div
+            style = {{ height: '100%', width: '100%' }}
+            onMouseOver = {
+                () => {
+                    //preventing auto close
+                    const timeCheck = Date.now() - shopCloseValidatoin;
+                    if(timeCheck > 400 ) {
+                        shopNavigationSwitch( 
+                            [ shopDisplay, setShopDisplay ],  
+                            [ shopAnimation, setShopAnimation ] 
+                        )
+                    }
+                }
+            }
+        ></div>
+        </>
+    )
+    
+    
 
     return (
         <>
@@ -44,16 +113,33 @@ const Navigation = () => {
 
                 <div className = "flex" key={1}>
 
-                    {/* Hambar image/icon */}
+                    {/* Hambar icon */}
                     <img 
                         src="/images/hambar.png" 
                         alt="" height="30" 
                         width="30" 
                         className={"cursorPointer " + style.ham_button }
-                        onClick = { () => { clickHandler ( hamSwitch , setHamSwitch ) } }
+                        onClick = { () => { 
+                            navigationSwitch( 
+                                [ hamDisplay, setHamDisplay ],  
+                                [ hamAnimation, setHamAnimation ] 
+                            ) 
+                        } } 
                     />
 
-                    <div onClick = { () => { clickHandler ( shopSwitch, setShopSwitch ) } } className = "shop-btn flex cursorPointer" >
+                    {/* shop button */}
+                    <div onClick = { 
+                        () => { 
+                            shopNavigationSwitch( 
+                                [ shopDisplay, setShopDisplay ], 
+                                [ shopAnimation, setShopAnimation ] 
+                            ) 
+                            setShopCloseValidatoin(Date.now);
+                        } 
+                            
+                        } 
+                        className = "shop-btn flex cursorPointer" 
+                    >
                         SHOP 
                         <img className={ style.shop_btn_image } src = "/images/icons/arrowdown.png" alt = "" height = "20" width = "20"/>
                     </div>
@@ -73,7 +159,20 @@ const Navigation = () => {
 
                     {/* <!-- search icon  --> */}
                     <div className = {style.searchIcon + " cursorPointer"}>
-                        <img src = "/images/icons/search.png" onClick = { () => { clickHandler ( searchSwitch , setSearchSwitch ) }} alt = "search anything" height = "20" width = "20"/>
+                        <img 
+                            src = "/images/icons/search.png" 
+                            onClick = { 
+                                () => { 
+                                    searchSwitch( 
+                                        [ searchDisplay, setSearchDisplay ],  
+                                        [ searchAnimation, setSearchAnimation ] 
+                                    ) 
+                                }  
+                            } 
+                            alt = "search anything" 
+                            height = "20" 
+                            width = "20"
+                        />
                     </div>
 
                     {/* <div className="cursorPointer" onClick = { () => { clickHandler ( cartSwitch , setCartSwitch ) }}>CART</div> */}
@@ -82,9 +181,21 @@ const Navigation = () => {
             </nav>
 
 
-            <HamNavigation hamClick = { hamSwitch } />
-            <ShopNavigation shopClick = { shopSwitch } />
-            <SearchBox searchClick = {searchSwitch}/>
+            <HamNavigation 
+                display={hamDisplay} 
+                animation ={hamAnimation} 
+                closeButon={hamNavCloseBtn}
+            />
+            <ShopNavigation 
+                display={shopDisplay} 
+                animation ={shopAnimation} 
+                closeButon={shopCloseBar}
+            />
+            <SearchBox 
+                display={searchDisplay} 
+                animation ={searchAnimation} 
+                closeButon={searchCloseBtn}
+            />
             <Cart cartClick = { cartSwitch } />
 
         </>

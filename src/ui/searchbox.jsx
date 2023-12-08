@@ -2,18 +2,7 @@ import { useState, useEffect } from "react";
 import { closeFunc } from "../data&functions/dataAndFunctions"
 import styles from "./css/searchBox.module.css";
 
-const SearchBox = ( { searchClick } ) => {
-    const [ display , setDisplay ] = useState("d-none");
-    const [ animation, setAnimation ] = useState("slideUp")
-
-
-    useEffect( () => {
-        if ( searchClick === 1 ) {
-            setAnimation( "slideDown" );
-            setDisplay( "" );
-        }
-    }, [ searchClick ]);
-
+const SearchBox = ( { display, animation, closeButon } ) => {
     // when user press esc it will close the search box
     const pressESC = () => {
         // IDLE FOR NOW     
@@ -36,9 +25,8 @@ const SearchBox = ( { searchClick } ) => {
                     </form>
                 </div>
 
-                <div className="search-close-btn flex flex-align-center flex-s-a" onClick = { ( ) => { closeFunc ( setDisplay, setAnimation ) } }>
-                    <img src="/images/icons/close.png" alt="" height="20" width="20"/>
-                </div>
+                {/* close button */}
+                {closeButon}
             </div>
         </>
     )

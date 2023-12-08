@@ -4,13 +4,11 @@ import axios from "axios"
 import styles from "./css/shopNavigation.module.css";
 import { useParams } from "react-router-dom";
 
-const ShopNavigation = ({ shopClick }) => {
-
-    const [displayShop, setDisplayShop] = useState("d-none");
-    const [animation, setAnimation] = useState('slideUp');
+const ShopNavigation = ({ display, animation, closeButon }) => {
+    // const [displayShop, setDisplayShop] = useState("d-none");
+    // const [animation, setAnimation] = useState('slideUp');
 
     const [data, setData] = useState([]);
-
     useEffect( () => {
         axios.get('http://localhost:8000/api/v1/shoplist?limit=4')
         .then( ( res ) => {
@@ -20,15 +18,15 @@ const ShopNavigation = ({ shopClick }) => {
 
 
     // auto close prevent on hover
-    const [time, setTime] = useState(0);
+    // const [time, setTime] = useState(0);
 
-    useEffect(() => {
-        if (shopClick === 1) {
-            setAnimation("slideDown");
-            setDisplayShop("");
-            setTime(Date.now());
-        }
-    }, [shopClick]);    // when shopClick component changes it will call useEffect()
+    // useEffect(() => {
+    //     if (shopClick === 1) {
+    //         setAnimation("slideDown");
+    //         setDisplayShop("");
+    //         setTime(Date.now());
+    //     }
+    // }, [shopClick]);    // when shopClick component changes it will call useEffect()
     
     
 
@@ -36,7 +34,7 @@ const ShopNavigation = ({ shopClick }) => {
     return (
         <>
             {/* <!-- SHOP NAVIGATION MENU --> */}
-            <div className={displayShop + " " + animation + " " + styles.book_shop_separate } >
+            <div className={ display + " " + animation + " " + styles.book_shop_separate } >
 
                 <div className={ "flex flex-wrap flex-s-a " + styles.container }>
                     {
@@ -69,7 +67,7 @@ const ShopNavigation = ({ shopClick }) => {
                 <a className={"transition " + styles.shop_all_btn} href="./shopall.php">SHOP ALL <i style={{ paddingLeft: "20px" }} className="fas fa-chevron-right"></i></a>
 
 
-                <div
+                {/* <div
                     className={styles.closeOnHover}
                     onMouseOver={
                         () => {
@@ -83,7 +81,8 @@ const ShopNavigation = ({ shopClick }) => {
 
                         }
                     }
-                ></div>
+                ></div> */}
+                {closeButon}
 
             </div>
 

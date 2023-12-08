@@ -12,17 +12,17 @@ const NavLinksInfo = [  // Minimizing Code: Ham-navigation Links information
     {link : "/login", text: "LOGIN/CREATE ACCOUNT" }
 ]
 
-const HamNavigation = ( { hamClick } ) => {
-    const [ display, setDisplay ] = useState ( "d-none" );
-    const [ animation, setAnimation] = useState ( "slideUp" );
+const HamNavigation = ( { display, animation, closeButon } ) => {
+    // const [ display, setDisplay ] = useState ( "d-none" );
+    // const [ animation, setAnimation] = useState ( "slideUp" );
 
     // a simple react hook 
-    useEffect( () => {
-        if ( hamClick === 1 ) {
-            setAnimation( "slideDown" );
-            setDisplay( "" );
-        }
-    }, [ hamClick ]); // each time hamClick is changed, it will change the className
+    // useEffect( () => {
+    //     if ( hamClick === 1 ) {
+    //         setAnimation( "slideDown" );
+    //         setDisplay( "" );
+    //     }
+    //}, [ hamClick ]); // each time hamClick is changed, it will change the className
 
 
     return (
@@ -41,13 +41,20 @@ const HamNavigation = ( { hamClick } ) => {
                     )
                 }) }
 
+                
+
                 <a href="./contactUs.php" className={styles.request_interview_btn}>
                     REQUEST INTERVIEW
                 </a>
+
                 
                 {/* Button for CLOSING hamNavigation */}
-                <div onClick={ () => { closeFunc ( setDisplay, setAnimation ); } } className = {styles.ham_close_btn} id = "close-nav-in-ham">
-                    <img src = "/images/icons/close.png" alt = "" height = "20" width = "20" />
+                <div  className = {styles.ham_close_btn} id = "close-nav-in-ham">
+                    {/* <div onClick={ () => { closeFunc ( setDisplay, setAnimation ); } }>
+                        <img src = "/images/icons/close.png" alt = "" height = "20" width = "20" />
+                    </div> */}
+                    {closeButon}
+                    
                 </div>
                 
             </div>
