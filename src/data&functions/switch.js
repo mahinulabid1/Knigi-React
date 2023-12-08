@@ -30,8 +30,13 @@ const shopNavigationSwitch =  ( display, animation ) => {
     toggleFunc(display, animation);
 }
 
+const cartSwitch =  ( display, animation ) => {
+    toggleFunc(display, animation);
+}
+
 export {
     navigationSwitch,
     searchSwitch,
-    shopNavigationSwitch
+    shopNavigationSwitch,
+    cartSwitch
 };

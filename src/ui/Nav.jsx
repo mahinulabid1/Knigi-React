@@ -6,7 +6,8 @@ import Cart from "./Cart"
 import { 
     navigationSwitch,
     searchSwitch,
-    shopNavigationSwitch
+    shopNavigationSwitch,
+    cartSwitch
 } from "../data&functions/switch"
 
 
@@ -21,36 +22,13 @@ const Navigation = () => {
     const [ cartSwitch, setCartSwitch ] = useState ( 0 );
     const [ searchDisplay, setSearchDisplay ] = useState( 'd-none' );
     const [ searchAnimation, setSearchAnimation ] = useState( 'slideUp' );
-
     const [ cartDisplay, setCartDisplay ] = useState("d-none");
     const [ cartAnimation, setCartAnimation ] = useState('slideUp');
-
     const [ shopDisplay, setShopDisplay ] = useState( 'd-none' ) ;
     const [ shopAnimation, setShopAnimation ] = useState ('slideUp')
     const [ shopCloseValidatoin, setShopCloseValidatoin ] = useState( 0 );  
 
     
-
-    // const clickHandler = ( target , setResponse) => {
-        /*
-            Description:
-            =============
-            This click handler sends a small response to another component 
-            named: "HamNavigation" in another file: "HamNavigation.jsx"
-
-            It simply says button clicked by setting value to 1 
-            and then reset its value so that it can send the same signal again.
-        */
-    //     if ( target === 0 ) {
-    //         setResponse( 1 );
-
-    //         setTimeout ( () => {
-    //             setResponse ( 0 );
-    //         } , 300 )
-            
-    //     }
-    // }
-
     // hambar close button
     const hamNavCloseBtn = (
         <>
@@ -150,7 +128,7 @@ const Navigation = () => {
                     <a title = "Home Page" className = {style.navLogo} href = "/"> Knigi </a>
                 </div>
 
-                {/* ./app/img/icons/search.png */}
+
                 <div className = "flex flex-s-b" key={3}>
                     {/* user btn: click to see full user information */}
                     <div className={style.userBtn}>
@@ -176,7 +154,19 @@ const Navigation = () => {
                     </div>
 
                     {/* <div className="cursorPointer" onClick = { () => { clickHandler ( cartSwitch , setCartSwitch ) }}>CART</div> */}
-                    <div className="cursorPointer" onClick = { () => { clickHandler ( cartSwitch , setCartSwitch ) }}  id = "cart-open"><img className = {style.cartIcon} src = "/images/icons/cart.png" alt ="Shopping Cart" height ="20" width ="20"/></div>
+                    <div 
+                        className="cursorPointer" 
+                        onClick = { ( ) => { 
+                            cartSwitch( 
+                                [ cartDisplay, setCartDisplay ],  
+                                [ cartAnimation, setCartAnimation ] 
+                                )  
+                            }
+                        }  
+                    id = "cart-open">
+
+                        <img className = {style.cartIcon} src = "/images/icons/cart.png" alt ="Shopping Cart" height ="20" width ="20"/>
+                    </div>
                 </div>
             </nav>
 
@@ -196,7 +186,11 @@ const Navigation = () => {
                 animation ={searchAnimation} 
                 closeButon={searchCloseBtn}
             />
-            <Cart cartClick = { cartSwitch } />
+            <Cart 
+                display={searchDisplay} 
+                animation ={searchAnimation} 
+                closeButon={searchCloseBtn}
+            />
 
         </>
     )
