@@ -1,7 +1,7 @@
-const toggleFunc = (display, animation) =>{
+const toggleFunc = (displayArg, animationArg) =>{
     // destructing state operation
-    const [ displayState, setDisplay ] = display;
-    const [ animationState, setAnimation ] = animation;
+    const [ displayState, setDisplay ] = displayArg;
+    const [ animationState, setAnimation ] = animationArg;
 
     if(displayState === 'd-none') {
         setDisplay('')
@@ -30,8 +30,9 @@ const shopNavigationSwitch =  ( display, animation ) => {
     toggleFunc(display, animation);
 }
 
-const cartSwitch =  ( display, animation ) => {
-    toggleFunc(display, animation);
+const cartSwitch =  ( display ) => {
+    const [ displayState, setDisplay ] = display;
+    displayState === 'd-none' ? setDisplay('') : setDisplay('d-none');
 }
 
 export {
