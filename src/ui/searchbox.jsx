@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
 import { closeFunc } from "../data&functions/dataAndFunctions"
 import styles from "./css/searchBox.module.css";
+import SearchCloseBtn from "./module.ui/nav.searchCloseBtn";
 
-const SearchBox = ( { display, animation, closeButon } ) => {
+const SearchBox = ( { searchPropsObj } ) => {
+    const props = searchPropsObj.searchProps;
+    const [display, setDisplay ] = props.display;
+    const [animation, setAnimation] = props.animation;
     // when user press esc it will close the search box
     const pressESC = () => {
         // IDLE FOR NOW     
@@ -26,7 +30,8 @@ const SearchBox = ( { display, animation, closeButon } ) => {
                 </div>
 
                 {/* close button */}
-                {closeButon}
+                {/* {closeButon} */}
+                <SearchCloseBtn setDisplay = { setDisplay } setAnimation = { setAnimation } />
             </div>
         </>
     )

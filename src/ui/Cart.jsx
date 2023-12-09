@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react";
 import styles from "./css/cart.module.css";
+import CartCloseBtn from "./module.ui/nav.cartCloseBtn";
 
 
 const dataInCart = [
@@ -9,14 +10,10 @@ const dataInCart = [
 ]
 
 
-const Cart = ( { display, closeButon } ) => {
-    // const [ displayCart, setDisplayCart ] = useState("d-none");
-
-    // useEffect(() => {
-    //     if ( cartClick === 1 ) {
-    //         setDisplayCart ( "" );
-    //     }
-    // }, [ cartClick ]);
+const Cart = ( { cartPropsObj } ) => {
+    const props = cartPropsObj.cartProps; 
+    const [display, setDisplay ] = props.display;
+    // const [animation, setAnimation] = props.animation;
 
     return (//"cart-holder d-none"
         <>
@@ -25,7 +22,9 @@ const Cart = ( { display, closeButon } ) => {
             <div className= { styles.cart_holder + " " + display } > 
                 <div className="flex flex-s-b search-box">
                     <div className={styles.cartOverview}>Your Cart <span>$35 USD</span></div>
-                    <div className={styles.cartCloseBtn} >{closeButon}</div>
+                    <div className={styles.cartCloseBtn} >
+                        <CartCloseBtn setDisplay={setDisplay} />
+                    </div>
                 </div>
 
                 <div>

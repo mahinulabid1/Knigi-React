@@ -3,10 +3,13 @@ import { closeFunc } from  "../data&functions/dataAndFunctions";
 import axios from "axios"
 import styles from "./css/shopNavigation.module.css";
 import { useParams } from "react-router-dom";
+import ShopNavigationClose from "./module.ui/nav.shopCloseBtn";
 
-const ShopNavigation = ({ display, animation, closeButon }) => {
-    // const [displayShop, setDisplayShop] = useState("d-none");
-    // const [animation, setAnimation] = useState('slideUp');
+const ShopNavigation = ( {shopPropsObj} ) => {
+    const shopProps = shopPropsObj.shopProps;
+    const [display, setDisplay ] = shopProps.display;
+    const [animation, setAnimation] = shopProps.animation;
+    const closeValidation = shopProps.shopCloseValidation;
 
     const [data, setData] = useState([]);
     useEffect( () => {
@@ -15,21 +18,6 @@ const ShopNavigation = ({ display, animation, closeButon }) => {
             setData(res.data);
         })
     }, [])          // [] if it is empty, it will execute the firsttime it mounts
-
-
-    // auto close prevent on hover
-    // const [time, setTime] = useState(0);
-
-    // useEffect(() => {
-    //     if (shopClick === 1) {
-    //         setAnimation("slideDown");
-    //         setDisplayShop("");
-    //         setTime(Date.now());
-    //     }
-    // }, [shopClick]);    // when shopClick component changes it will call useEffect()
-    
-    
-
 
     return (
         <>
@@ -64,25 +52,16 @@ const ShopNavigation = ({ display, animation, closeButon }) => {
 
                 </div>
 
-                <a className={"transition " + styles.shop_all_btn} href="./shopall.php">SHOP ALL <i style={{ paddingLeft: "20px" }} className="fas fa-chevron-right"></i></a>
+                <a className={"transition " + styles.shop_all_btn} href="./shopall.php">
+                    SHOP ALL 
+                    <i style={{ paddingLeft: "20px" }} className="fas fa-chevron-right"></i>
+                </a>
 
-
-                {/* <div
-                    className={styles.closeOnHover}
-                    onMouseOver={
-                        () => {
-                            //preventing auto close
-                            let Now = Date.now();
-                            let diff = Now - time;
-
-                            if (diff > 1000) { //if hovering is not more than one second than do not close 
-                                closeFunc( setDisplayShop, setAnimation );
-                            }
-
-                        }
-                    }
-                ></div> */}
-                {closeButon}
+                <ShopNavigationClose 
+                    setAnimation = {setAnimation} 
+                    setDisplay={setDisplay} 
+                    closeValidation = {closeValidation}
+                />
 
             </div>
 

@@ -31,36 +31,39 @@ const Navigation = () => {
     const [ cartAnimation, setCartAnimation ] = useState('slideUp');
     const [ shopDisplay, setShopDisplay ] = useState( 'd-none' ) ;
     const [ shopAnimation, setShopAnimation ] = useState ('slideUp')
-    const [ shopCloseValidatoin, setShopCloseValidatoin ] = useState( 0 );  
+    const [ shopCloseValidation, setShopCloseValidation ] = useState( 0 );  
 
 
     const hamStateObj = { hamDisplay, setHamDisplay, hamAnimation, setHamAnimation}; 
     const searchStateObj = { searchDisplay, setSearchDisplay, searchAnimation, setSearchAnimation };
-    const shopStateObj = { shopDisplay, setShopDisplay, shopAnimation, setShopAnimation, shopCloseValidatoin }
-    const cartStateObj = { cartDisplay, setCartDisplay}
+    // const shopStateObj = { shopDisplay, setShopDisplay, shopAnimation, setShopAnimation, shopCloseValidatoin }
+    // const cartStateObj = { cartDisplay, setCartDisplay}
 
+    /*
+    display={[shopDisplay, setShopDisplay]} 
+    animation ={[shopAnimation, setShopAnimation]} 
+    shopCloseValidation = {shopCloseValidatoin}
+    */
+    const shopProps = {
+        display: [shopDisplay, setShopDisplay],
+        animation : [shopAnimation, setShopAnimation],
+        shopCloseValidation :shopCloseValidation
+    }
+
+    const hamNavProps = {
+        display : [hamDisplay, setHamDisplay],
+        animation : [hamAnimation, setHamAnimation]
+    }
     
-    // shop close bar 
-    // const shopCloseBar = (
-    //     <>
-    //     <div
-    //         style = {{ height: '100%', width: '100%' }}
-    //         onMouseOver = {
-    //             () => {
-    //                 //preventing auto close
-    //                 const timeCheck = Date.now() - shopCloseValidatoin;
-    //                 if(timeCheck > 400 ) {
-    //                     shopNavigationSwitch( 
-    //                         [ shopDisplay, setShopDisplay ],  
-    //                         [ shopAnimation, setShopAnimation ] 
-    //                     )
-    //                 }
-    //             }
-    //         }
-    //     ></div>
-    //     </>
-    // )
-    
+    const cartProps = {
+        display : [cartDisplay, setCartDisplay],
+        // animation : [cartAnimation, setCartAnimation]
+    }
+
+    const searchProps = {
+        display : [searchDisplay, setSearchDisplay],
+        animation : [searchAnimation, setSearchAnimation]
+    }
     
 
     return (
@@ -90,7 +93,7 @@ const Navigation = () => {
                                 [ shopDisplay, setShopDisplay ], 
                                 [ shopAnimation, setShopAnimation ] 
                             ) 
-                            setShopCloseValidatoin(Date.now);
+                            setShopCloseValidation(Date.now);
                         } 
                             
                         } 
@@ -149,26 +152,10 @@ const Navigation = () => {
             </nav>
 
             {/* HIDDEN COMPONENTS, WILL BE RENDERED BASED ON CONDITION */}
-            <HamNavigation 
-                display={hamDisplay} 
-                animation ={hamAnimation} 
-                closeButon= { <HamNavCloseBtn state= { hamStateObj } /> }
-            />
-            <ShopNavigation 
-                display={shopDisplay} 
-                animation ={shopAnimation} 
-                closeButon={<ShopNavigationSwitch state= { shopStateObj }/>}
-            />
-            <SearchBox 
-                display={searchDisplay} 
-                animation ={searchAnimation} 
-                closeButon={<SearchCloseBtn state = { searchStateObj }/>}
-            />
-            <Cart 
-                display={cartDisplay} 
-                
-                closeButon={<CartCloseBtn state = { cartStateObj } />}
-            />
+            <HamNavigation hamNavPropsObj = {{hamNavProps}} />
+            <ShopNavigation shopPropsObj = {{shopProps}} />
+            <SearchBox searchPropsObj = { {searchProps} } />
+            <Cart cartPropsObj={{cartProps}} />
 
         </>
     )

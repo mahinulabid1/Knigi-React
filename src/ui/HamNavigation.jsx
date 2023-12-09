@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { closeFunc } from  "../data&functions/dataAndFunctions";
 import styles from "./css/hamNav.module.css";    //css module
+import HamNavCloseBtn from "./module.ui/nav.hamCloseBtn";
 
 
 const NavLinksInfo = [  // Minimizing Code: Ham-navigation Links information
@@ -12,17 +13,10 @@ const NavLinksInfo = [  // Minimizing Code: Ham-navigation Links information
     {link : "/login", text: "LOGIN/CREATE ACCOUNT" }
 ]
 
-const HamNavigation = ( { display, animation, closeButon } ) => {
-    // const [ display, setDisplay ] = useState ( "d-none" );
-    // const [ animation, setAnimation] = useState ( "slideUp" );
-
-    // a simple react hook 
-    // useEffect( () => {
-    //     if ( hamClick === 1 ) {
-    //         setAnimation( "slideDown" );
-    //         setDisplay( "" );
-    //     }
-    //}, [ hamClick ]); // each time hamClick is changed, it will change the className
+const HamNavigation = ( { hamNavPropsObj } ) => {
+    const props = hamNavPropsObj.hamNavProps;
+    const [display, setDisplay ] = props.display;
+    const [animation, setAnimation] = props.animation;
 
 
     return (
@@ -41,20 +35,17 @@ const HamNavigation = ( { display, animation, closeButon } ) => {
                     )
                 }) }
 
-                
-
+            
                 <a href="./contactUs.php" className={styles.request_interview_btn}>
                     REQUEST INTERVIEW
                 </a>
 
-                
                 {/* Button for CLOSING hamNavigation */}
                 <div  className = {styles.ham_close_btn} id = "close-nav-in-ham">
-                    {/* <div onClick={ () => { closeFunc ( setDisplay, setAnimation ); } }>
-                        <img src = "/images/icons/close.png" alt = "" height = "20" width = "20" />
-                    </div> */}
-                    {closeButon}
-                    
+                    <HamNavCloseBtn 
+                        setDisplay={setDisplay} 
+                        setAnimation={setAnimation}
+                    />
                 </div>
                 
             </div>

@@ -1,10 +1,9 @@
 import { cartSwitch } from "../../data&functions/switch";
 
-const CartCloseBtn = ( {state} ) => {
-    const { cartDisplay, setCartDisplay } = state;
+const CartCloseBtn = ( {setDisplay} ) => {
     return (
         <>
-            <img onClick={ ()=>{ cartSwitch( [cartDisplay, setCartDisplay] ) } } src="/images/icons/close.png" alt="" height="20" width="20" />
+            <img onClick={ ()=>{ setDisplay('d-none') } } src="/images/icons/close.png" alt="" height="20" width="20" />
         </>
     )
 } 

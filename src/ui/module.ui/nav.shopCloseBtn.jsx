@@ -1,34 +1,25 @@
-import { shopNavigationSwitch } from "../../data&functions/switch";
+const ShopNavigationClose = ( {setDisplay, setAnimation, closeValidation} ) => {
 
-
-const ShopNavigationSwitch = ( { state } ) => {
-    const {
-        shopDisplay,
-        setShopDisplay,
-        shopAnimation,
-        setShopAnimation,
-        shopCloseValidatoin
-    } = state;
+    const eventHandler = () => {
+        //preventing auto close
+        const timeCheck = Date.now() - closeValidation;
+        if(timeCheck > 400 ) {
+            setAnimation('slideUp')
+            setTimeout(() => {
+                setDisplay('d-none');
+            }, 390)
+        }
+    }
 
     return (
         <>
-        <div
-            style = {{ height: '100%', width: '100%' }}
-            onMouseOver = {
-                () => {
-                    //preventing auto close
-                    const timeCheck = Date.now() - shopCloseValidatoin;
-                    if(timeCheck > 400 ) {
-                        shopNavigationSwitch( 
-                            [ shopDisplay, setShopDisplay ],  
-                            [ shopAnimation, setShopAnimation ] 
-                        )
-                    }
-                }
-            }
-        ></div>
+            <div
+                style = {{ height: '100%', width: '100%' }}
+                onMouseOver = {eventHandler}
+            >
+            </div>
         </>
     )
 }
 
-export default ShopNavigationSwitch;
+export default ShopNavigationClose;
