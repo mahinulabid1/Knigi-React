@@ -1,6 +1,6 @@
 import {useState, useEffect} from "react";
 import styles from "./css/cart.module.css";
-import CartCloseBtn from "./module.ui/nav.cartCloseBtn";
+import CartCloseBtn from "./module.ui/nav.cart.CloseBtn";
 
 
 const dataInCart = [

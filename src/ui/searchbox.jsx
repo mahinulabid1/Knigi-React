@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { closeFunc } from "../data&functions/dataAndFunctions"
 import styles from "./css/searchBox.module.css";
-import SearchCloseBtn from "./module.ui/nav.searchCloseBtn";
+import SearchCloseBtn from "./module.ui/nav.search.CloseBtn";
 
 const SearchBox = ( { searchPropsObj } ) => {
     const props = searchPropsObj.searchProps;

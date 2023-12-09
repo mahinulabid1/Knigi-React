@@ -3,10 +3,10 @@ import HamNavigation from "./HamNavigation"
 import ShopNavigation from "./shopNavigation"
 import SearchBox from "./searchbox"
 import Cart from "./Cart"
-import HamNavCloseBtn from "./module.ui/nav.hamCloseBtn"
-import SearchCloseBtn from "./module.ui/nav.searchCloseBtn"
-import ShopNavigationSwitch from "./module.ui/nav.shopCloseBtn"
-import CartCloseBtn from "./module.ui/nav.cartCloseBtn";
+import HamNavCloseBtn from "./module.ui/nav.ham.CloseBtn"
+import SearchCloseBtn from "./module.ui/nav.search.CloseBtn"
+import ShopNavigationSwitch from "./module.ui/nav.shop.CloseBtn"
+import CartCloseBtn from "./module.ui/nav.cart.CloseBtn";
 import { 
     navigationSwitch,
     searchSwitch,

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { closeFunc } from  "../data&functions/dataAndFunctions";
 import styles from "./css/hamNav.module.css";    //css module
-import HamNavCloseBtn from "./module.ui/nav.hamCloseBtn";
+import HamNavCloseBtn from "./module.ui/nav.ham.CloseBtn";
 
 
 const NavLinksInfo = [  // Minimizing Code: Ham-navigation Links information
