@@ -32,16 +32,16 @@ const ContactUs = ( ) => {
 
                     <div className={styles.flex_item}>
 
-                        <h3 class="section-flex-h3">COLLABORATE WITH US</h3>
-                        <p class={styles.contactPara}>
+                        <h3 className="section-flex-h3">COLLABORATE WITH US</h3>
+                        <p className={styles.contactPara}>
                             We also provide opportunities to collaborate on video, photography, and writing.
                         </p>
-                        <a href="./collaborate" class={styles.buttonSideBar}>COLLABORATE</a>
-                        <h3 class="section-flex-h3">REQUEST AN INTERVIEW</h3>
-                        <p class={styles.contactPara}>
+                        <a href="./collaborate" className={styles.buttonSideBar}>COLLABORATE</a>
+                        <h3 className="section-flex-h3">REQUEST AN INTERVIEW</h3>
+                        <p className={styles.contactPara}>
                             Have a story, tattoo, or dwelling, you’d like to share with us, then request an interview.
                         </p>
-                        <a href="./collaborate" class={styles.buttonSideBar}>REQUEST AN INTERVIEW</a>
+                        <a href="./collaborate" className={styles.buttonSideBar}>REQUEST AN INTERVIEW</a>
 
                     </div>
                 </div>

@@ -40,7 +40,7 @@ export default function Homepage () {
 
                 < div className = { styles.about_us_item } >
                     < h4 > ABOUT US </ h4 >
-                    < p class = "about-us-p" > 
+                    < p className = "about-us-p" > 
                         Woven Magazine celebrates artists, designers, and entrepreneurs while exploring the history of design through travel.
                     </ p >
                 </ div >
