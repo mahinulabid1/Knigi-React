@@ -6,11 +6,11 @@ const BlogPostSummary = () => {
         <>
             <section className={styles.blogPost}>
                 <h3 className="text-center">FEATURED BLOG POSTS</h3>
-                <div className="flex flex-wrap flex-cen">
+                <div className="flex flex-wrap flex-cen" key={'212331321241233'}>
                     {
-                        BlogPostSummaryData.map( ( cur ) => {
+                        BlogPostSummaryData.map( ( cur, index ) => {
                             return(
-                                <div className={styles.blogPostItems}>
+                                <div className={styles.blogPostItems} key={index}>
                                     <div><img src={cur.images} alt=""/></div>
 
                                     <div>
@@ -25,7 +25,7 @@ const BlogPostSummary = () => {
                     
 
                 </div>
-                <div className={styles.visitBlogBtn}><a href="./allBlogs.php">Visit blog</a></div>
+                <div className={styles.visitBlogBtn} key={'13209472350472394857'}><a href="./allBlogs.php">Visit blog</a></div>
             </section>
         </>
     )

@@ -9,7 +9,7 @@ const Stories = () => {
         <>
             <section className={styles.their_stories}>
                 <h4>THE STORIES</h4>
-                <div className={"their-stories-menu-container bound-padding flex flex-s-b " + styles.menu_container}>
+                <div key={1} className={"their-stories-menu-container bound-padding flex flex-s-b " + styles.menu_container}>
                     <div className="their-stories-menu">
                         {/* <!-- empty div --> */}
                     </div>
@@ -25,12 +25,12 @@ const Stories = () => {
                     </div>
                 </div>
 
-                <div className="flex flex-wrap flex-s-b bound-padding">
+                <div key={2} className="flex flex-wrap flex-s-b bound-padding">
 
                     {
-                        StoriesData.map( (cur ) => {
+                        StoriesData.map( (cur, index ) => {
                             return (
-                                <div className={styles.contentCard}>
+                                <div className={styles.contentCard} key={index}>
                                     <div className={styles.titleImageSection}>
                                         <img src={cur.image} alt="stories image"/>
                                             <div>
