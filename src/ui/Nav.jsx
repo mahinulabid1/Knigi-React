@@ -7,6 +7,7 @@ import HamNavCloseBtn from "./module.ui/nav.ham.CloseBtn"
 import SearchCloseBtn from "./module.ui/nav.search.CloseBtn"
 import ShopNavigationSwitch from "./module.ui/nav.shop.CloseBtn"
 import CartCloseBtn from "./module.ui/nav.cart.CloseBtn";
+import UserInNavigation from "./userInNavigation"
 import { 
     navigationSwitch,
     searchSwitch,
@@ -32,18 +33,10 @@ const Navigation = () => {
     const [ shopDisplay, setShopDisplay ] = useState( 'd-none' ) ;
     const [ shopAnimation, setShopAnimation ] = useState ('slideUp')
     const [ shopCloseValidation, setShopCloseValidation ] = useState( 0 );  
+    const [ userNavDisplay, setUserNavDisplay ] = useState('d-none');
 
 
-    const hamStateObj = { hamDisplay, setHamDisplay, hamAnimation, setHamAnimation}; 
-    const searchStateObj = { searchDisplay, setSearchDisplay, searchAnimation, setSearchAnimation };
-    // const shopStateObj = { shopDisplay, setShopDisplay, shopAnimation, setShopAnimation, shopCloseValidatoin }
-    // const cartStateObj = { cartDisplay, setCartDisplay}
 
-    /*
-    display={[shopDisplay, setShopDisplay]} 
-    animation ={[shopAnimation, setShopAnimation]} 
-    shopCloseValidation = {shopCloseValidatoin}
-    */
     const shopProps = {
         display: [shopDisplay, setShopDisplay],
         animation : [shopAnimation, setShopAnimation],
@@ -64,6 +57,12 @@ const Navigation = () => {
         display : [searchDisplay, setSearchDisplay],
         animation : [searchAnimation, setSearchAnimation]
     }
+
+    const x = {
+        display : userNavDisplay,
+        setDispaly: setUserNavDisplay
+    }
+    // console.log(x);
     
 
     return (
@@ -113,7 +112,9 @@ const Navigation = () => {
                 <div className = "flex flex-s-b" key={3}>
                     {/* user btn: click to see full user information */}
                     <div className={style.userBtn}>
-                        <a href="/userDetails">Username</a>
+                        <div className="cursorPointer" onClick = {()=>{setUserNavDisplay('')}}>
+                            <img src="./images/userIcon.png" style={{width: '25px', height:'20px' }} />
+                        </div>
                     </div>
 
                     {/* <!-- search icon  --> */}
@@ -138,10 +139,7 @@ const Navigation = () => {
                     <div 
                         className = "cursorPointer" 
                         onClick = { ( ) => { 
-                            cartSwitch( 
-                                [ cartDisplay, setCartDisplay ],  
-                                [ cartAnimation, setCartAnimation ] 
-                                )  
+                            setCartDisplay(''); 
                             }
                         }  
                     id = "cart-open">
@@ -156,7 +154,8 @@ const Navigation = () => {
             <ShopNavigation shopPropsObj = {{shopProps}} />
             <SearchBox searchPropsObj = { {searchProps} } />
             <Cart cartPropsObj={{cartProps}} />
-
+            <UserInNavigation display={userNavDisplay} setDisplay={setUserNavDisplay} />
+            {/* <UserInNavigation state={{x}}/> */}
         </>
     )
 }

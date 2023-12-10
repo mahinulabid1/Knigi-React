@@ -98,14 +98,12 @@
 
 
 .shop_all_btn:link,
-.shop_all_btn:visited
-{
+.shop_all_btn:visited{
     color: black;
 }
 
 .shop_all_btn:hover,
-.shop_all_btn:active
-{
+.shop_all_btn:active{
     color: white;
     background: green;
 }
