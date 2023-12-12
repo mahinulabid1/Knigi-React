@@ -1,11 +1,12 @@
 import styles from "./AllBlogs.module.css"
-import React from 'react'
+// import React from 'react'
 import Navigation from '../../ui/Nav'
-import Stories from "../stories/stories"
-import BlogPostSummary from "../../ui/BlogPostSummary"
 import Footer from "../../ui/footer"
-import AllBlogsPartOne from "./allBlogsPart1"
-import AllBlogsPart2 from "./allBlogsPart2"
+import Sidebar from "../../ui/sideBar"
+import AllBlogsPartOne from "./module/blogsList"
+// import AllBlogsPart2 from "./allBlogsPart2"
+
+import Template from "../../template/template"
 
 const AllBlogs = ( ) => {
     return( 
@@ -14,13 +15,12 @@ const AllBlogs = ( ) => {
             <section className = {styles.blogSection}>
 
                 <h3 className = {"text-center " + styles.blogSectionHeading}>THE BLOG</h3>
-
-                <div className = "flex flex-wrap flex-s-b"> 
-
-                    <AllBlogsPartOne />
-
-                    <AllBlogsPart2 />
-                </div>
+                <Template 
+                    elements={[
+                        <AllBlogsPartOne/>,
+                        <Sidebar />
+                    ]}
+                />
 
                 <div className = "page-counter-all-blogs">
                     <div className = "page-counter-center-container center-horizontally">
@@ -29,6 +29,7 @@ const AllBlogs = ( ) => {
                     </div>
                     
                 </div>
+
             </section>
 
             <Footer />

@@ -58,7 +58,7 @@ const routeHandler = createBrowserRouter ( [
     {
         path : "/login",
         element : <FormComponent/>
-    }
+    },
 
 ] );
 

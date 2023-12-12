@@ -1,7 +1,11 @@
-.blogListContainer{
+/* .blogListContainer{
     width: 60%;
-}
+} */
 
+/* .test{
+    margin:0 auto;
+    width:100%;
+} */
 
 
 .listSides:nth-child(1){
@@ -10,9 +14,9 @@
     margin-right: 30px;
 }
 
-.listSides:nth-child(2){
+/* .listSides:nth-child(2){
     width: 60%;
-}
+} */
 
 .listSides:nth-child(2) img{
     object-fit: contain;

@@ -1,7 +1,8 @@
-import styles from "./allBlogsPart2.module.css";
+import styles from "./css/sideBar.module.css"
 
-const AllBlogsPart2 = () => {
-    return (
+const Sidebar = () => {
+
+    return(
         <>
             < div className = {styles.blogSideBar} >
                 <h3 className = "section-flex-h3">COLLABORATE WITH US</h3>
@@ -19,5 +20,4 @@ const AllBlogsPart2 = () => {
     )
 }
 
-
-export default AllBlogsPart2;
+export default Sidebar;

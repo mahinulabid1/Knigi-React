@@ -1,4 +1,4 @@
-import styles from "./allBlogsPart1.module.css";
+import styles from "./blogsList.module.css";
 
 
 const AllBlogsPartOneData = [
@@ -31,35 +31,31 @@ const AllBlogsPartOneData = [
     },
 ]
 
-const AllBlogsPartOne = () => {
+const BlogList = () => {
 
     return (
         <>
             <div className={styles.blogListContainer}>
                 {
-                    AllBlogsPartOneData.map( (cur ) => {
+                    AllBlogsPartOneData.map( (cur, index ) => {
                         return( 
                             <>
-                                <div className = {" flex flex-wrap flex-s-a flex-align-center"}>
+                                <div className = {" flex flex-wrap flex-s-a flex-align-center"} key={index}>
 
                                     <div className = {styles.listSides}>
-
                                         <a href={cur.link} className = {styles.blogListTitle}>{cur.title}</a>
                                         <p className = "sub-flex-para">{cur.para}</p>
                                         <a href={cur.link} className = {styles.listBtn}>GO ON </a>    
-
                                     </div>
 
-                                    <div className = {styles.listSides}><img src={cur.image} alt=""/></div>
+                                    <div className = {styles.listSides}>
+                                        <img className={styles.test} src={cur.image} alt=""/>
+                                    </div>
                                 </div>
 
-                                <br/>
-                                <hr/>
-                                <br/>
+                                <br/> <hr/> <br/>
                             </>
-                            
-
-                            
+  
                         )
                     })
                 }
@@ -70,4 +66,4 @@ const AllBlogsPartOne = () => {
 
 }
 
-export default AllBlogsPartOne;
+export default BlogList;
